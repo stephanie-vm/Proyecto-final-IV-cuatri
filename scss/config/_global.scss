@@ -1,0 +1,16 @@
+.wrapper {
+    width: 1080px;
+    margin: 0 auto;
+    margin: 0 180px;
+}
+.title-font {
+    font-family:$title-font;
+}
+p {
+    font-family:$paragraph-font;
+}
+.clearfix{
+    content: "";
+    clear: both;
+    display: table;
+}
