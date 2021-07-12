@@ -1,4 +1,32 @@
 .logo {
-    float:left;
-    margin-top:-360px;
+    margin-top:20px;
+    margin-bottom: 30px;
+}
+.svg-wave {
+    position: absolute;
+    z-index: -1;
+}
+.title-font {
+    font-size: 48px;
+    margin-top: 0px;
+}
+.title-font > span {
+    color:$dark-pink;
+}
+.content-1__p {
+    margin-bottom: 100px;
+}
+.content-2 {
+    background-color: $light-pink;
+    border-radius: $boder-radius;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    float: right;
+    margin-top: -860px;
+    padding:18px 20px;
+}
+.content-1__btn {
+    float: right;
+}
+.content__input--space {
+    margin-bottom: 30px;
 }
