@@ -338,6 +338,9 @@ h2,
 h3 {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
 
+h1 {
+  font-size: 30px; }
+
 h2 {
   color: #383333;
   font-size: 26px;
@@ -400,3 +403,64 @@ p {
 
 .form-account__h2 {
   border-top: 2px solid #1C264A; }
+
+.header__ul {
+  list-style: none;
+  margin-left: 510px;
+  margin-top: -120px; }
+
+.header__ul li {
+  float: left; }
+
+.header__li:hover {
+  background-color: #FE9D99;
+  border-radius: 5px;
+  padding: 6px 12px 6px 12px; }
+
+.header__ul li + li {
+  margin-left: 100px; }
+
+.header__li a {
+  color: #383333;
+  text-decoration: none;
+  font-size: 22px;
+  font-family: "Abril Fatface", cursive;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+
+.home-content-2 {
+  background-color: #FE9D99;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  float: right;
+  margin-right: 58px;
+  margin-top: -250px;
+  padding: 18px 20px; }
+
+.home-content-2 h2 {
+  text-align: center; }
+
+.home-content-2 p {
+  margin-bottom: 30px; }
+
+.home-content-2 button {
+  margin-right: 66px; }
+
+.home-content-1__ul {
+  list-style: none;
+  padding: 0;
+  display: flex; }
+
+.home-content-1__img {
+  height: 160px;
+  width: 160px;
+  border-radius: 200px;
+  margin-right: 17px;
+  margin-left: 60px; }
+
+.home-content-1__ul li {
+  float: left; }
+
+.home-content-1__h3 {
+  margin-top: 170px;
+  margin-left: -112px;
+  text-align: center; }

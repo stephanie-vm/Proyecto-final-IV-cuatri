@@ -2,5 +2,6 @@
 @import 'helpers/variables';
 @import 'config/global';
 @import 'components/buttons';
-@import 'partials/home'
-
+@import 'partials/home';
+@import 'layout/header';
+@import 'partials/home-logged-in'
