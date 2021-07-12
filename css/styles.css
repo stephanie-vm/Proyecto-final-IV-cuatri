@@ -397,3 +397,6 @@ p {
 
 .content__input--space {
   margin-bottom: 30px; }
+
+.form-account__h2 {
+  border-top: 2px solid #1C264A; }
