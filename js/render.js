@@ -3,6 +3,7 @@ class ArtistsHome {
         this.data = data;
     }
     addArtitstHome(){
+        console.log(this.data)
         for (let i = 0; i < this.data.length; i++) {
             const listArtist = document.querySelector('.home-content-1__ul');
             const liArtist = document.createElement('li');
@@ -23,9 +24,4 @@ class ArtistsHome {
         }
     }
 }
-fetch('https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists')
-.then((response) => response.json())
-.then((data) => {
-    const profileArtist = new ArtistsHome(data);
-    profileArtist.addArtitstHome();
-})
+export default ArtistsHome;
