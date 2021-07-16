@@ -1,0 +1,44 @@
+//MODAL ARE YOU SURE WITH YOUR CHANGES
+
+.btn-modal-changes a {
+    text-decoration: none;
+    padding: 12px 38px;
+    margin: 0 auto;
+}
+.btn-modal-changes {
+    margin-left: 462px;
+    margin-top: 200px;
+}
+.modal__overlay-changes{
+    background: rgba(0,0,0,.8);
+    display: none;
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.modal-changes{
+    background-color: $light-pink;
+    border-radius: $boder-radius;
+    height: 160px;
+    margin: 8% auto;
+    width: 500px;
+    padding: 30px 20px;
+    position: relative;
+}
+.btn-modal-changes--close{
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    width: 30px;
+    height: 30px;
+    display:flex;
+    cursor: pointer;
+}
+.btn-save-changes {
+    margin: 40px 100px 10px 80px;
+}
+.cancel-btn {
+    margin-left: -26px;
+}

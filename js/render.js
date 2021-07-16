@@ -1,9 +1,10 @@
+import { fetchArtist } from "./services.js";
+fetchArtist()
 class ArtistsHome {
     constructor(data){
         this.data = data;
     }
     addArtitstHome(){
-        console.log(this.data)
         for (let i = 0; i < this.data.length; i++) {
             const listArtist = document.querySelector('.home-content-1__ul');
             const liArtist = document.createElement('li');
@@ -24,4 +25,4 @@ class ArtistsHome {
         }
     }
 }
-export default ArtistsHome;
+export default ArtistsHome

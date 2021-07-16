@@ -310,7 +310,7 @@ body {
   width: 1080px;
   margin: 0 auto; }
 
-.content-2__input {
+.principal__input {
   background-color: #FEFCEB;
   border-radius: 5px;
   border: none;
@@ -371,6 +371,20 @@ p {
   color: #1C264A;
   background-color: #C7CEEA; }
 
+.cancel-btn {
+  background-color: #E42E16;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  color: #FEFCEB;
+  font-family: "Karla", sans-serif;
+  height: 40px;
+  width: 112px; }
+
+.cancel-btn:hover {
+  color: #1C264A;
+  background-color: #C6240E; }
+
 .logo {
   margin-top: 20px;
   margin-bottom: 30px; }
@@ -428,6 +442,96 @@ p {
   font-size: 22px;
   font-family: "Abril Fatface", cursive;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+
+.btn-modal a {
+  text-decoration: none;
+  padding: 12px 38px;
+  margin: 0 auto; }
+
+.btn-modal {
+  margin-left: 462px;
+  margin-top: 100px; }
+
+.modal__overlay {
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.modal {
+  background-color: #FE9D99;
+  border-radius: 5px;
+  height: 300px;
+  margin: 8% auto;
+  width: 500px;
+  padding: 30px 20px;
+  position: relative; }
+
+.btn-modal--close {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  cursor: pointer; }
+
+select {
+  color: #9F9F9F; }
+
+.modal__form {
+  padding: 20px 40px; }
+
+.title-modal {
+  margin: 14px 0px 10px 40px; }
+
+.btn-save {
+  margin-top: 10px; }
+
+.btn-modal-changes a {
+  text-decoration: none;
+  padding: 12px 38px;
+  margin: 0 auto; }
+
+.btn-modal-changes {
+  margin-left: 462px;
+  margin-top: 200px; }
+
+.modal__overlay-changes {
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.modal-changes {
+  background-color: #FE9D99;
+  border-radius: 5px;
+  height: 160px;
+  margin: 8% auto;
+  width: 500px;
+  padding: 30px 20px;
+  position: relative; }
+
+.btn-modal-changes--close {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  cursor: pointer; }
+
+.btn-save-changes {
+  margin: 40px 100px 10px 80px; }
+
+.cancel-btn {
+  margin-left: -26px; }
 
 .home-content-2 {
   background-color: #FE9D99;

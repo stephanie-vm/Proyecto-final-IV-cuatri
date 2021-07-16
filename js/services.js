@@ -1,11 +1,11 @@
-const arrayArtist = await fetch('https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists')
-.then((response) => response.json())
-.then((data) => {
+import ArtistsHome from "./render.js";
 
-    return data;
-}) ()
-console.log(arrayArtist)
-
-
-
-export {arrayArtist}
+function fetchArtist() {
+    fetch('https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists')
+    .then((response) => response.json())
+    .then((data) => {
+        const profileArtist = new ArtistsHome(data);
+        profileArtist.addArtitstHome();
+})
+}
+export {fetchArtist}
