@@ -385,63 +385,66 @@ p {
   color: #1C264A;
   background-color: #C6240E; }
 
-.logo {
-  margin-top: 20px;
-  margin-bottom: 30px; }
+.player-btn:active .player-btn__icon path {
+  fill: #1C264A; }
 
-.svg-wave {
-  position: absolute;
-  z-index: -1; }
+.player-btn:focus .player-btn__icon path {
+  fill: #1C264A; }
 
-.title-font {
-  font-size: 48px;
-  margin-top: 0px; }
+.player-btn:hover .player-btn__icon path {
+  fill: #1C264A; }
 
-.title-font > span {
-  color: #FD635D; }
+.player-control__btn + .player-control__btn {
+  margin-left: 30px; }
 
-.content-1__p {
-  margin-bottom: 100px; }
+.player-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0; }
 
-.content-2 {
-  background-color: #FE9D99;
-  border-radius: 5px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  float: right;
-  margin-top: -860px;
-  padding: 18px 20px; }
-
-.content-1__btn {
-  float: right; }
-
-.content__input--space {
-  margin-bottom: 30px; }
-
-.form-account__h2 {
-  border-top: 2px solid #1C264A; }
-
-.header__ul {
-  list-style: none;
-  margin-left: 510px;
-  margin-top: -120px; }
-
-.header__ul li {
-  float: left; }
-
-.header__li:hover {
-  background-color: #FE9D99;
-  border-radius: 5px;
-  padding: 6px 12px 6px 12px; }
-
-.header__ul li + li {
-  margin-left: 100px; }
-
-.header__li a {
-  color: #383333;
+.btn-modal-changes a {
   text-decoration: none;
-  font-size: 22px;
-  font-family: "Abril Fatface", cursive;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+  padding: 12px 38px;
+  margin: 0 auto; }
+
+.btn-modal-changes {
+  margin-left: 462px;
+  margin-top: 200px; }
+
+.modal__overlay-changes {
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.modal-changes {
+  background-color: #FE9D99;
+  border-radius: 5px;
+  height: 160px;
+  margin: 8% auto;
+  width: 500px;
+  padding: 30px 20px;
+  position: relative; }
+
+.btn-modal-changes--close {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  cursor: pointer; }
+
+.btn-save-changes {
+  margin: 40px 100px 10px 80px; }
+
+.cancel-btn {
+  margin-left: -26px; }
 
 .btn-modal a {
   text-decoration: none;
@@ -491,47 +494,26 @@ select {
 .btn-save {
   margin-top: 10px; }
 
-.btn-modal-changes a {
-  text-decoration: none;
-  padding: 12px 38px;
-  margin: 0 auto; }
+.header__ul {
+  list-style: none;
+  margin-left: 510px;
+  margin-top: -120px; }
 
-.btn-modal-changes {
-  margin-left: 462px;
-  margin-top: 200px; }
+.header__li {
+  float: left;
+  padding: 10px 44px 15px 44px; }
 
-.modal__overlay-changes {
-  background: rgba(0, 0, 0, 0.8);
-  display: none;
-  height: 100vh;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%; }
-
-.modal-changes {
+.header__li:hover {
   background-color: #FE9D99;
   border-radius: 5px;
-  height: 160px;
-  margin: 8% auto;
-  width: 500px;
-  padding: 30px 20px;
-  position: relative; }
+  box-shadow: 0 20px 20px rgba(252, 169, 196, 0.6); }
 
-.btn-modal-changes--close {
-  position: absolute;
-  right: 14px;
-  top: 14px;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  cursor: pointer; }
-
-.btn-save-changes {
-  margin: 40px 100px 10px 80px; }
-
-.cancel-btn {
-  margin-left: -26px; }
+.header__li a {
+  color: #383333;
+  text-decoration: none;
+  font-size: 22px;
+  font-family: "Abril Fatface", cursive;
+  text-shadow: 0 20px 20px rgba(252, 169, 196, 0.6); }
 
 .home-content-2 {
   background-color: #FE9D99;
@@ -570,3 +552,55 @@ select {
   margin-top: 170px;
   margin-left: -112px;
   text-align: center; }
+
+.logo {
+  margin-top: 20px;
+  margin-bottom: 30px; }
+
+.svg-wave {
+  position: absolute;
+  z-index: -1; }
+
+.title-font {
+  font-size: 48px;
+  margin-top: 0px; }
+
+.title-font > span {
+  color: #FD635D; }
+
+.content-1__p {
+  margin-bottom: 100px; }
+
+.content-2 {
+  background-color: #FE9D99;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  float: right;
+  margin-top: -860px;
+  padding: 18px 20px; }
+
+.content-1__btn {
+  float: right; }
+
+.content__input--space {
+  margin-bottom: 30px; }
+
+.form-account__h2 {
+  border-top: 2px solid #1C264A; }
+
+.container-player {
+  background-color: #FE9D99;
+  border-radius: 5px;
+  box-shadow: 0 20px 20px rgba(252, 169, 196, 0.6);
+  height: 639px;
+  margin: 0 auto;
+  width: 1078px; }
+
+.container-player__btn {
+  display: inline;
+  margin-left: 90px; }
+
+.container-player__controls {
+  display: inline-block;
+  margin-left: 200px;
+  margin-right: 200px; }

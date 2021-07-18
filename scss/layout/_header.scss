@@ -3,16 +3,14 @@
     margin-left: 510px;
     margin-top: -120px;
 }
-.header__ul li {
+.header__li {
     float: left;
+    padding: 10px 44px 15px 44px;
 }
 .header__li:hover {
     background-color: $light-pink;
     border-radius: $boder-radius;
-    padding: 6px 12px 6px 12px;
-}
-.header__ul li + li {
-    margin-left: 100px;
+    box-shadow: $text-shadow;
 }
 .header__li a{
     color: $titles-color;
@@ -21,3 +19,4 @@
     font-family: $title-font;
     text-shadow: $text-shadow;
 }
+
