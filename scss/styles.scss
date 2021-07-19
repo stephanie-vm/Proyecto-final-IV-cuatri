@@ -1,0 +1,23 @@
+// library (normalize)
+@import 'library/normalize';
+
+// variables
+@import 'helpers/variables';
+
+// global styles
+@import 'config/global';
+
+// components
+@import 'components/buttons';
+@import 'components/icon-buttons';
+@import 'components/modal-changes';
+@import 'components/modal';
+
+// layouts
+@import 'layout/header';
+
+// partials
+@import 'partials/home-logged-in';
+@import 'partials/home';
+@import 'partials/player';
+@import 'partials/view-artists'

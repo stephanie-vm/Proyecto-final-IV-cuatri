@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/just-symphony.png" type="image/png" />
+  <title>just symphony</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="backround-wave">
+    <svg class="svg-wave" fill="none" viewBox="0 0 1440 502" xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#a)">
+        <path
+          d="m425 51.5c-173.73 3.3916-362 135-425 152.5v-211h1441v500.5c-75-62.848-62-128.5-132.5-199.5-99.43-100.14-260.16 65.394-388.5 0-183.5-93.5-264.5-247-495-242.5z"
+          fill="#C7CEEA" />
+      </g>
+      <defs>
+        <filter id="a" x="-4" y="-7" width="1449" height="508.5" color-interpolation-filters="sRGB"
+          filterUnits="userSpaceOnUse">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+          <feOffset dy="4" />
+          <feGaussianBlur stdDeviation="2" />
+          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
+          <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+        </filter>
+      </defs>
+    </svg>
+  </div>
+  <div class="wrapper">
+    <!-- HEADER -->
+    <div class="header">
+      <a href="index.html"><img class="logo" src="img/just-symphony.png" alt="just-symphony"></a>
+      <div class="header__nav clearfix">
+        <ul class="header__ul clearfix">
+          <li class="header__li"><a href="#">Profile</a></li>
+          <li class="header__li"><a href="#">Music player</a></li>
+          <li class="header__li"><a href="#">Artists</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container-player">
+      <h2>
+        <!--set this content with js-->
+      </h2>
+      <audio src="https://cetav.s3.us-east-2.amazonaws.com/idioteque.mp3" id="audio" controls></audio>
+      <div class="container-player__visual">
+        <canvas>
+          <!--set this content with js-->
+        </canvas>
+      </div>
+      <div class="container-player__btn">
+        <button class="player-btn" aria-labelledby="button-label">
+
+          <span id="button-label" hidden>add to favorites</span>
+
+          <svg class="player-btn__icon" aria-hidden="true" focusable="false" width="65" height="65" viewBox="0 0 65 65"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d)">
+              <path
+                d="M37 4.5C37 3.30653 36.5259 2.16193 35.682 1.31802C34.8381 0.474106 33.6935 0 32.5 0C31.3065 0 30.1619 0.474106 29.318 1.31802C28.4741 2.16193 28 3.30653 28 4.5V24H8.5C7.30653 24 6.16193 24.4741 5.31802 25.318C4.47411 26.1619 4 27.3065 4 28.5C4 29.6935 4.47411 30.8381 5.31802 31.682C6.16193 32.5259 7.30653 33 8.5 33H28V52.5C28 53.6935 28.4741 54.8381 29.318 55.682C30.1619 56.5259 31.3065 57 32.5 57C33.6935 57 34.8381 56.5259 35.682 55.682C36.5259 54.8381 37 53.6935 37 52.5V33H56.5C57.6935 33 58.8381 32.5259 59.682 31.682C60.5259 30.8381 61 29.6935 61 28.5C61 27.3065 60.5259 26.1619 59.682 25.318C58.8381 24.4741 57.6935 24 56.5 24H37V4.5Z"
+                fill="#FD635D" />
+            </g>
+            <defs>
+              <filter id="filter0_d" x="0" y="0" width="65" height="65" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                <feOffset dy="4" />
+                <feGaussianBlur stdDeviation="2" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+              </filter>
+            </defs>
+          </svg>
+
+
+
+        </button>
+        <div class="container-player__controls">
+          <button class="player-btn player-control__btn" aria-labelledby="button-label">
+
+            <span id="button-label" hidden>Previous song</span>
+
+            <svg class="player-btn__icon" aria-hidden="true" focusable="false" width="65" height="68"
+              viewBox="0 0 65 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g filter="url(#filter0_d)">
+                <path
+                  d="M4 3.33305C4 2.44907 4.3533 1.60129 4.98217 0.976227C5.61104 0.35116 6.46398 0 7.35334 0C8.2427 0 9.09563 0.35116 9.7245 0.976227C10.3534 1.60129 10.7067 2.44907 10.7067 3.33305V24.9845L52.7374 0.746602C56.359 -1.33988 61 1.18656 61 5.3862V54.6086C61 58.8083 56.359 61.3414 52.7374 59.2549L10.7067 35.017V56.6618C10.7067 57.5457 10.3534 58.3935 9.7245 59.0186C9.09563 59.6437 8.2427 59.9948 7.35334 59.9948C6.46398 59.9948 5.61104 59.6437 4.98217 59.0186C4.3533 58.3935 4 57.5457 4 56.6618V3.33305Z"
+                  fill="#FD635D" />
+              </g>
+              <defs>
+                <filter id="filter0_d" x="0" y="0" width="65" height="68" filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                  <feOffset dy="4" />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                </filter>
+              </defs>
+            </svg>
+
+          </button>
+          <button class="player-btn player-control__btn" aria-labelledby="button-label">
+
+            <span id="button-label" hidden>Play song</span>
+
+            <svg class="player-btn__icon" aria-hidden="true" focusable="false" width="60" height="66"
+              viewBox="0 0 60 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g filter="url(#filter0_d)">
+                <path
+                  d="M53.3716 33.4893L12.0141 57.2789C8.50428 59.2957 4 56.8536 4 52.7877V5.20862C4 1.14919 8.49778 -1.29935 12.0141 0.723918L53.3716 24.5135C54.17 24.9653 54.8336 25.6185 55.2953 26.4066C55.7569 27.1948 56 28.09 56 29.0014C56 29.9128 55.7569 30.808 55.2953 31.5962C54.8336 32.3843 54.17 33.0375 53.3716 33.4893Z"
+                  fill="#FD635D" />
+              </g>
+              <defs>
+                <filter id="filter0_d" x="0" y="0" width="60" height="66" filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                  <feOffset dy="4" />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                </filter>
+              </defs>
+            </svg>
+
+          </button>
+          <button class="player-btn player-control__btn" aria-labelledby="button-label">
+            <span id="button-label" hidden>Stop song</span>
+
+            <svg class="player-btn__icon" aria-hidden="true" focusable="false" width="60" height="66"
+              viewBox="0 0 60 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g filter="url(#filter0_d)">
+                <path
+                  d="M13.75 0C16.3359 0 18.8158 1.01845 20.6443 2.8313C22.4728 4.64415 23.5 7.10291 23.5 9.66667V48.3333C23.5 50.8971 22.4728 53.3559 20.6443 55.1687C18.8158 56.9816 16.3359 58 13.75 58C11.1641 58 8.68419 56.9816 6.85571 55.1687C5.02723 53.3559 4 50.8971 4 48.3333V9.66667C4 7.10291 5.02723 4.64415 6.85571 2.8313C8.68419 1.01845 11.1641 0 13.75 0ZM46.25 0C48.8359 0 51.3158 1.01845 53.1443 2.8313C54.9728 4.64415 56 7.10291 56 9.66667V48.3333C56 50.8971 54.9728 53.3559 53.1443 55.1687C51.3158 56.9816 48.8359 58 46.25 58C43.6641 58 41.1842 56.9816 39.3557 55.1687C37.5272 53.3559 36.5 50.8971 36.5 48.3333V9.66667C36.5 7.10291 37.5272 4.64415 39.3557 2.8313C41.1842 1.01845 43.6641 0 46.25 0Z"
+                  fill="#FD635D" />
+              </g>
+              <defs>
+                <filter id="filter0_d" x="0" y="0" width="60" height="66" filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                  <feOffset dy="4" />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                </filter>
+              </defs>
+            </svg>
+
+          </button>
+          <button class="player-btn player-control__btn" aria-labelledby="button-label">
+
+            <span id="button-label" hidden>Menu</span>
+
+            <svg class="player-btn__icon" aria-hidden="true" focusable="false" <svg width="62" height="65"
+              viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g filter="url(#filter0_d)">
+                <path
+                  d="M58 3.16639C58 2.32661 57.6653 1.52123 57.0696 0.927416C56.4739 0.333602 55.666 0 54.8235 0C53.9811 0 53.1731 0.333602 52.5774 0.927416C51.9817 1.52123 51.6471 2.32661 51.6471 3.16639V23.7353L11.8332 0.709272C8.40259 -1.26656 4 1.12724 4 5.11689V51.8782C4 55.8678 8.39623 58.2743 11.8332 56.2921L51.6471 33.2661V53.8287C51.6471 54.6685 51.9817 55.4738 52.5774 56.0677C53.1731 56.6615 53.9811 56.9951 54.8235 56.9951C55.666 56.9951 56.4739 56.6615 57.0696 56.0677C57.6653 55.4738 58 54.6685 58 53.8287V3.16639Z"
+                  fill="#FD635D" />
+              </g>
+              <defs>
+                <filter id="filter0_d" x="0" y="0" width="62" height="65" filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                  <feOffset dy="4" />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                </filter>
+              </defs>
+            </svg>
+
+          </button>
+        </div>
+        <button class="player-btn" aria-labelledby="button-label">
+
+          <span id="button-label" hidden>Menu</span>
+
+          <svg class="player-btn__icon" aria-hidden="true" focusable="false" width="75" height="66" viewBox="0 0 75 66"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path
+                d="M37.5 21.8919L33.7564 14.412C32.8267 12.5598 31.2146 9.89649 28.9324 7.74326C26.6879 5.62348 23.9995 4.18103 20.75 4.18103C13.7318 4.18103 8.1875 9.72507 8.1875 16.3896C8.1875 21.4528 10.5074 25.0276 16.0098 30.4797C17.4209 31.8761 19.0289 33.3855 20.8086 35.0495C25.4484 39.3978 31.2188 44.8081 37.5 52.0412C43.7812 44.8081 49.5516 39.3978 54.1914 35.0495C55.9711 33.3855 57.5832 31.872 58.9902 30.4797C64.4926 25.0276 66.8125 21.4528 66.8125 16.3896C66.8125 9.72507 61.2682 4.18103 54.25 4.18103C50.9963 4.18103 48.3121 5.62348 46.0676 7.74326C43.7854 9.89649 42.1733 12.5598 41.2436 14.412L37.5 21.8919ZM39.1415 56.5609C38.9398 56.7994 38.6885 56.9911 38.405 57.1226C38.1215 57.2541 37.8126 57.3222 37.5 57.3222C37.1874 57.3222 36.8785 57.2541 36.595 57.1226C36.3115 56.9911 36.0602 56.7994 35.8585 56.5609C29.1543 48.6086 23.0866 42.9224 18.0909 38.2438C9.44375 30.1368 4 25.0402 4 16.3896C4 7.3377 11.4956 0 20.75 0C27.45 0 32.1358 4.39008 35.0042 8.3955C36.093 9.92157 36.9221 11.3891 37.5 12.5431C38.2244 11.0988 39.0588 9.71224 39.9957 8.3955C42.8642 4.3859 47.55 0 54.25 0C63.5044 0 71 7.3377 71 16.3896C71 25.0402 65.5563 30.1368 56.9091 38.2438C51.9134 42.9266 45.8457 48.6128 39.1415 56.5567V56.5609Z"
+                fill="#FD635D" />
+            </g>
+          </svg>
+
+        </button>
+
+      </div>
+    </div>
+  </div>
+  <script src="js/player.js" type="module"></script>
+</body>
+
+</html>

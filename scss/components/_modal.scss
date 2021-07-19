@@ -1,0 +1,51 @@
+
+.btn-modal a {
+    text-decoration: none;
+    padding: 12px 38px;
+    margin: 0 auto;
+}
+.btn-modal {
+    margin-left: 462px;
+    margin-top: 100px;
+}
+.modal__overlay{
+    background: rgba(0,0,0,.8);
+    display: none;
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.modal{
+    background-color: $light-pink;
+    border-radius: $boder-radius;
+    height: 300px;
+    margin: 8% auto;
+    width: 500px;
+    padding: 30px 20px;
+    position: relative;
+}
+.btn-modal--close{
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    cursor: pointer;
+}
+
+select {
+    color: $deaseable-color;
+}
+
+.modal__form {
+    padding: 20px 40px;
+}
+.title-modal {
+    margin: 14px 0px 10px 40px;
+}
+.btn-save {
+    margin-top: 10px;
+}

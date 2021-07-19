@@ -1,0 +1,25 @@
+{
+  "name": "proyecto-final",
+  "version": "1.0.0",
+  "description": "proyecto final IV cuatrimestre",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --watch scss -o css",
+    "sass-build": "node-sass sass -o public/css --output-style compressed",
+    "dev-server": "live-server --watch=\"index.html,sass,js\"",
+    "eslint": "eslint js",
+    "dev": "concurrently \"npm run sass-build\" \"npm run scss\" \"npm run dev-server\" \"esw -w js\""
+  },
+  "author": "stephanie & Jeampaul",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-watch": "^7.0.0",
+    "live-server": "^1.2.1",
+    "livereload": "^0.9.1",
+    "node-sass": "^6.0.1"
+  }
+}

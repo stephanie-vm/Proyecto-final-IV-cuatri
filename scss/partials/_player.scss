@@ -1,0 +1,18 @@
+.container-player{
+  background-color: $light-pink;
+  border-radius: $boder-radius;
+  box-shadow: $text-shadow;
+  height: 639px;
+  margin: 0 auto;
+  width: 1078px;
+}
+.container-player__btn{
+  display: inline;
+  margin-left: 90px;
+
+}
+.container-player__controls{
+  display: inline-block;
+  margin-left: 200px;
+  margin-right: 200px;
+}
