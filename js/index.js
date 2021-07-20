@@ -1,5 +1,7 @@
-// import ArtistsHome from "./render.js";
-// import { fetchArtist } from "./services.js";
-// const profileArtist = new ArtistsHome(fetchArtist);
-// profileArtist.addArtitstHome();
-// export default profileArtist;
+// imports from other modules:
+
+// variables and instances:
+
+// user events:
+
+// execute functions and methods:

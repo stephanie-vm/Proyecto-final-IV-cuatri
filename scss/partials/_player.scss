@@ -1,0 +1,21 @@
+.container-player{
+  background-color: $light-pink;
+  border-radius: $boder-radius;
+  box-shadow: $text-shadow;
+  height: 639px;
+  margin: 0 auto;
+  width: 1078px;
+}
+.container-player__controls{
+  display: inline-block;
+  margin-right: 200px;
+}
+.player-select{
+  display: inline-block;
+  width: 200px;
+}
+.container-player__select{
+  display: inline-block;
+  margin-left: 90px;
+  margin-right: 76px;
+}
