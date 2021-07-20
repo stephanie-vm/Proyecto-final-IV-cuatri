@@ -13,3 +13,10 @@ const profileArtist = new ArtistsHome(artistData);
 
 // execute functions and methods:
 profileArtist.addArtitstHome();
+
+// // variables and instances:
+// async function getArtist(url) {
+//   const getApiArtist = await getApi(url);
+//   return getApiArtist;
+// }
+// const artistData = getArtist(artistLink);

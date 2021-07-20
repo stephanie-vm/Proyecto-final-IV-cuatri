@@ -6,18 +6,22 @@ class ArtistsHome {
   addArtitstHome() {
     for (let i = 0; i < this.data.length; i++) {
       const listArtist = document.querySelector('.home-content-1__ul');
+      const anchorArtist = document.createElement('a');
+      anchorArtist.setAttribute('href', `view-artist.html?artistId=${this.data[i].id}`);
       const liArtist = document.createElement('li');
       liArtist.setAttribute('class', 'home-content-1__li');
-      listArtist.appendChild(liArtist);
+      liArtist.setAttribute('id', `${this.data[i].id}`);
+      listArtist.appendChild(anchorArtist);
+      anchorArtist.appendChild(liArtist);
 
       const imageArtist = document.createElement('img');
       imageArtist.setAttribute('src', `${this.data[i].image}`);
       imageArtist.setAttribute('class', 'home-content-1__img');
-      listArtist.appendChild(imageArtist);
+      liArtist.appendChild(imageArtist);
 
       const nameArtist = document.createElement('h3');
       nameArtist.setAttribute('class', 'home-content-1__h3');
-      listArtist.appendChild(nameArtist);
+      liArtist.appendChild(nameArtist);
       nameArtist.innerHTML = `${this.data[i].name}`;
     }
   }

@@ -27,15 +27,19 @@
     height: 160px;
     width: 160px;
     border-radius: 200px;
-    margin-right: 17px;
-    margin-left: 60px;
+    margin-right: 20px;
 }
 
 .home-content-1__ul li {
     float: left;
 }
+.home-content-1__ul a {
+  color: $titles-color;
+  font-family: $title-font;
+  font-size: 18px;
+  text-decoration: none;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 .home-content-1__h3 {
-    margin-top: 170px;
-    margin-left: -112px;
     text-align: center;
 }

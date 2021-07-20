@@ -542,15 +542,19 @@ select {
   height: 160px;
   width: 160px;
   border-radius: 200px;
-  margin-right: 17px;
-  margin-left: 60px; }
+  margin-right: 20px; }
 
 .home-content-1__ul li {
   float: left; }
 
+.home-content-1__ul a {
+  color: #383333;
+  font-family: "Abril Fatface", cursive;
+  font-size: 18px;
+  text-decoration: none;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+
 .home-content-1__h3 {
-  margin-top: 170px;
-  margin-left: -112px;
   text-align: center; }
 
 .logo {
@@ -642,15 +646,15 @@ select {
   z-index: 2;
   padding: 8px 168px 13px 85px; }
 
-.tabs-list-1 {
+.tabs-list-0 {
   top: 185px;
   left: -58px; }
 
-.tabs-list-2 {
+.tabs-list-1 {
   top: 256px;
   left: -58px; }
 
-.tabs-list-3 {
+.tabs-list-2 {
   top: 325px;
   left: -58px; }
 
@@ -670,10 +674,10 @@ select {
   margin-left: -60px; }
 
 /*ASIGNADAS POR Js*/
-.js-activo {
+.js-active {
   background-color: #C7CEEA;
   border-radius: 5px;
   color: #383333; }
 
-.js-oculto {
+.js-hidden {
   display: none; }

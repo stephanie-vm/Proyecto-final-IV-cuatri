@@ -36,17 +36,17 @@
   z-index: 2;
   padding: 8px 168px 13px 85px;
 }
-.tabs-list-1{
+.tabs-list-0{
   top: 185px;
   left: -58px;
 }
 
-.tabs-list-2{
+.tabs-list-1{
   top: 256px;
   left: -58px;
 }
 
-.tabs-list-3{
+.tabs-list-2{
   top: 325px;
   left: -58px;
 }
@@ -68,12 +68,12 @@
 
 
 /*ASIGNADAS POR Js*/
-.js-activo {
+.js-active {
   background-color: $light-blue;
   border-radius: $boder-radius;
   color: $titles-color;
 }
 
-.js-oculto {
+.js-hidden {
   display: none;
 }
