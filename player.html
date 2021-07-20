@@ -57,34 +57,13 @@
         </canvas>
       </div>
       <div class="container-player__btn">
-        <button class="player-btn" aria-labelledby="button-label">
-
-          <span id="button-label" hidden>add to favorites</span>
-
-          <svg class="player-btn__icon" aria-hidden="true" focusable="false" width="65" height="65" viewBox="0 0 65 65"
-            fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#filter0_d)">
-              <path
-                d="M37 4.5C37 3.30653 36.5259 2.16193 35.682 1.31802C34.8381 0.474106 33.6935 0 32.5 0C31.3065 0 30.1619 0.474106 29.318 1.31802C28.4741 2.16193 28 3.30653 28 4.5V24H8.5C7.30653 24 6.16193 24.4741 5.31802 25.318C4.47411 26.1619 4 27.3065 4 28.5C4 29.6935 4.47411 30.8381 5.31802 31.682C6.16193 32.5259 7.30653 33 8.5 33H28V52.5C28 53.6935 28.4741 54.8381 29.318 55.682C30.1619 56.5259 31.3065 57 32.5 57C33.6935 57 34.8381 56.5259 35.682 55.682C36.5259 54.8381 37 53.6935 37 52.5V33H56.5C57.6935 33 58.8381 32.5259 59.682 31.682C60.5259 30.8381 61 29.6935 61 28.5C61 27.3065 60.5259 26.1619 59.682 25.318C58.8381 24.4741 57.6935 24 56.5 24H37V4.5Z"
-                fill="#FD635D" />
-            </g>
-            <defs>
-              <filter id="filter0_d" x="0" y="0" width="65" height="65" filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                <feOffset dy="4" />
-                <feGaussianBlur stdDeviation="2" />
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
-                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-              </filter>
-            </defs>
-          </svg>
-
-
-
-        </button>
+        <div class="container-player__select">
+          <label for="existing-list" class="player-select__label" hidden>Select playlist:</label>
+          <select id="existing-list" class="principal__input player-select">
+              <option value="" aria-hidden="true"  hidden>Add to playlist</option>
+              <option>Create new playlist</option>
+          </select>
+        </div>
         <div class="container-player__controls">
           <button class="player-btn player-control__btn" aria-labelledby="button-label">
 
