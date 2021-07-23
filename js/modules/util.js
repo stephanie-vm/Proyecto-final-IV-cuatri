@@ -11,6 +11,14 @@ const overlayChanges = document.getElementsByClassName('modal__overlay-changes')
 // artist url
 const artistLink = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
 
+//player
+const prevBtn = document.querySelector('.btn__prev-js');
+const playBtn = document.querySelector('.btn__play-js');
+const stopBtn = document.querySelector('.btn__stop-js');
+const nextBtn = document.querySelector('.btn__next-js');
+const favoritesBtn = document.querySelector('.btn__favorites-js');
+const playerSelect = document.querySelector('.player__select-js');
+
 /*// canvas
 const canvas = document.querySelector('.canvas');
 const ctx = canvas().getContext('2d');
@@ -26,6 +34,12 @@ export {
   closeModalChanges,
   overlayChanges,
   artistLink,
+  prevBtn,
+  playBtn,
+  stopBtn,
+  nextBtn,
+  favoritesBtn,
+  playerSelect,
   /*canvas,
   ctx,
   audio,*/

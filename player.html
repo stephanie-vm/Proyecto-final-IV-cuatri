@@ -59,13 +59,13 @@
       <div class="container-player__btn">
         <div class="container-player__select">
           <label for="existing-list" class="player-select__label" hidden>Select playlist:</label>
-          <select id="existing-list" class="principal__input player-select">
+          <select id="existing-list" class="principal__input player-select player__select-js">
               <option value="" aria-hidden="true"  hidden>Add to playlist</option>
               <option>Create new playlist</option>
           </select>
         </div>
         <div class="container-player__controls">
-          <button class="player-btn player-control__btn" aria-labelledby="button-label">
+          <button class="player-btn player-control__btn btn__prev-js" aria-labelledby="button-label">
 
             <span id="button-label" hidden>Previous song</span>
 
@@ -91,7 +91,7 @@
             </svg>
 
           </button>
-          <button class="player-btn player-control__btn" aria-labelledby="button-label">
+          <button class="player-btn player-control__btn btn__play-js" aria-labelledby="button-label">
 
             <span id="button-label" hidden>Play song</span>
 
@@ -117,7 +117,7 @@
             </svg>
 
           </button>
-          <button class="player-btn player-control__btn" aria-labelledby="button-label">
+          <button class="player-btn player-control__btn btn__stop-js" aria-labelledby="button-label">
             <span id="button-label" hidden>Stop song</span>
 
             <svg class="player-btn__icon" aria-hidden="true" focusable="false" width="60" height="66"
@@ -142,7 +142,7 @@
             </svg>
 
           </button>
-          <button class="player-btn player-control__btn" aria-labelledby="button-label">
+          <button class="player-btn player-control__btn btn__next-js" aria-labelledby="button-label">
 
             <span id="button-label" hidden>Menu</span>
 
@@ -169,7 +169,7 @@
 
           </button>
         </div>
-        <button class="player-btn" aria-labelledby="button-label">
+        <button class="player-btn btn__favorites-js" aria-labelledby="button-label">
 
           <span id="button-label" hidden>Menu</span>
 
