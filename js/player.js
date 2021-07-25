@@ -14,3 +14,4 @@ const stopObv = extend(stopBtn, PlayerObserver);
 const nextObv = extend(nextBtn, PlayerObserver);
 const favoritesObv = extend(favoritesBtn, PlayerObserver);
 const SelectObv = extend(playerSelect, PlayerObserver);
+console.log(prevObv)
