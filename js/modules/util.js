@@ -38,7 +38,6 @@ export {
   openModalChanges,
   closeModalChanges,
   overlayChanges,
-  getParam,
   artistLink,
   getParam,
   prevBtn,

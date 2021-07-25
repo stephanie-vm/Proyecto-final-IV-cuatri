@@ -13,6 +13,7 @@ const viewArtist = await getApi(artistLink);
 // }
 
 // function for create the name of artist, description and songs in the artist view
+function infoArtistApi(){
   for (let i = 0; i < viewArtist.length; i++) {
     const listArtistView = document.querySelector('.tabs-list');
     const liArtistView = document.createElement('li');
