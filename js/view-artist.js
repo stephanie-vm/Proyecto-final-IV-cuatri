@@ -5,8 +5,14 @@ import {
 } from './modules/util.js';
 const viewArtist = await getApi(artistLink);
 
+// for (let i = 0; i < viewArtist.length; i++) {
+//   const songsLink = artistLink + viewArtist[i].id;
+//   const viewSongs = await getApi(songsLink);
+//   // logica
+
+// }
+
 // function for create the name of artist, description and songs in the artist view
-function infoArtistApi(viewArtist) {
   for (let i = 0; i < viewArtist.length; i++) {
     const listArtistView = document.querySelector('.tabs-list');
     const liArtistView = document.createElement('li');
@@ -20,13 +26,14 @@ function infoArtistApi(viewArtist) {
     anchorArtistView.innerText = `${viewArtist[i].name}`;
   }
 }
-infoArtistApi(viewArtist);
+
+infoArtistApi();
 //Function tabs content
-function tabsContentArtist(viewArtist) {
+function tabsContentArtist() {
   for (let i = 0; i < viewArtist.length; i++) {
     const principalContentTabs = document.querySelector('.tab-content');
     const infoContentTabs = document.createElement('div');
-    infoContentTabs.setAttribute('id', `#tab-${i}`);
+    infoContentTabs.setAttribute('id', `tab-${i}`);
     infoContentTabs.setAttribute('class', 'tab-content-info js-hidden');
     principalContentTabs.appendChild(infoContentTabs);
     const profileArtist = document.createElement('div');
@@ -42,7 +49,7 @@ function tabsContentArtist(viewArtist) {
     infoContentTabs.appendChild(profileArtist);
   }
 }
-tabsContentArtist(viewArtist);
+tabsContentArtist();
 //Check id
 function checkId(items, content){
   if (getParam) {
@@ -85,11 +92,6 @@ function tabsEvent(items, content) {
 function changeStatus() {
   const items = document.querySelectorAll('.tabs-list-item');
   const content = document.querySelectorAll('.tab-content-info');
-  content[0].classList.remove('js-hidden');
-  items[0].classList.add('js-active');
-//   for( let i = 0; i< content.length; i++){
-//     content[i].classList.add('js-hidden');
-// }
   tabsEvent(items, content);
   checkId(items, content);
 }
