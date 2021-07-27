@@ -573,6 +573,10 @@ select {
 .content-1__p {
   margin-bottom: 100px; }
 
+.img-home {
+  width: 530px;
+  height: 400px; }
+
 .content-2 {
   background-color: #FE9D99;
   border-radius: 5px;
@@ -611,7 +615,7 @@ select {
   margin-left: 90px;
   margin-right: 76px; }
 
-.content-artist {
+.content-tabs {
   background-color: #FE9D99;
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -620,7 +624,7 @@ select {
   position: relative;
   width: 1080px; }
 
-.title-artist {
+.title-tabs {
   color: #383333;
   display: inline-block;
   font-family: "Abril Fatface", cursive;
@@ -706,3 +710,36 @@ select {
 
 .tab-content__p-artist {
   text-align: justify; }
+
+.tab-content-playlist {
+  background-color: #C7CEEA;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #525151;
+  float: right;
+  height: 361px;
+  margin-right: 28px;
+  margin-top: 36px;
+  padding: 20px;
+  width: 765px; }
+
+.secondary-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #1C264A;
+  display: block;
+  font-family: "Karla", sans-serif;
+  height: 40px;
+  margin-bottom: 18px;
+  margin-left: 26px;
+  margin-top: -26px; }
+
+.content-tabs input:focus {
+  background-color: #FEFCEB; }
+
+.content-tabs__img {
+  float: right;
+  height: 196px;
+  margin-right: 26px;
+  margin-top: -591px;
+  width: 482px; }

@@ -16,6 +16,7 @@ const getParam = params.get('artistId');
 
 // artist url
 const artistLink = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
+const artistSongLink = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs';
 
 /*// canvas
 const canvas = document.querySelector('.canvas');
@@ -33,6 +34,7 @@ export {
   overlayChanges,
   getParam,
   artistLink,
+  artistSongLink,
   /*canvas,
   ctx,
   audio,*/
