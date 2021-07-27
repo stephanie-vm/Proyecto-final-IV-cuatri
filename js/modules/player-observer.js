@@ -1,26 +1,23 @@
-class PlayerObserver {
-  constructor() {
-    this.subscribers = {}; // colection of suscribers
+class Playersubject {
+  constructor(button) {
+    this.subscribers = []; // colection of suscribers
+    this.button = button; // Button subject
   }
 
-  suscribe(type, subscriberFn, subscriberctx) {
-    if (!this.subscribers[type]) {
-      this.subscribers[type] = [];
-      // this creates an array with diferents types, first verify if the array exits with the condition
-    }
-    this.subscribers[type].push({ fn: subscriberFn, subscriberctx, type });
+  suscribe(subscriber) {
+    this.subscribers.push(subscriber);
     // this adds the new suscriber from collection
   }
 
-  unsuscribe(type, subscriberFn, subscriberctx) {
-    this.subscribers[type] = this.subscribers[type].filter((subscriber) => subscriber.fn !== subscriberFn && subscriber.subscriberctx !== subscriberctx);
+  unsuscribefunction(subscriber) {
+    this.subscribers = this.subscribers.filter((sub) => sub !== subscriber);
   }// this removes the suscriber from collection
 
-  notify(type, arg) {
-    this.subscribers[type].forEach((subscriber) => {
-      subscriber.fn.call(subscriber.subscriberctx, arg);
+  notify() {
+    this.subscribers.forEach((subscriber) => {
+      subscriber.update();
     });
-  }// notify change
+  }// notify subscribers
 }
 
-export default PlayerObserver;
+export default Playersubject;

@@ -24,12 +24,12 @@ const nextBtn = document.querySelector('.btn__next-js');
 const favoritesBtn = document.querySelector('.btn__favorites-js');
 const playerSelect = document.querySelector('.player__select-js');
 
-/*// canvas
-const canvas = document.querySelector('.canvas');
-const ctx = canvas().getContext('2d');
+// canvas
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
 
 // temporal
-const audio = document.querySelector('#audio');*/
+const audio = document.querySelector('#audio');
 
 export {
   openModal,
@@ -46,7 +46,7 @@ export {
   nextBtn,
   favoritesBtn,
   playerSelect,
-  /*canvas,
+  canvas,
   ctx,
-  audio,*/
+  audio,
 };

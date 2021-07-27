@@ -590,6 +590,9 @@ select {
 .form-account__h2 {
   border-top: 2px solid #1C264A; }
 
+canvas {
+  background-color: #C7CEEA; }
+
 .container-player {
   background-color: #FE9D99;
   border-radius: 5px;
