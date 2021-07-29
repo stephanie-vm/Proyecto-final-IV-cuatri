@@ -594,6 +594,16 @@ select {
 .form-account__h2 {
   border-top: 2px solid #1C264A; }
 
+.hidden {
+  display: none; }
+
+.visually {
+  display: block; }
+
+#error-message {
+  display: none;
+  color: #E42E16; }
+
 .container-player {
   background-color: #FE9D99;
   border-radius: 5px;

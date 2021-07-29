@@ -48,26 +48,29 @@
             <div class="form-sign">
                 <h2>Sign in</h2>
                 <form action="#" method="GET">
-                    <label for="email">Email</label>
-                    <input class="principal__input" type="email" name="email" id="email" class="form__input" placeholder="example@gmail.com"/>
+                    <label for="email-1">Email</label>
+                    <input class="principal__input" type="email" name="email" id="email-1" class="form__input" placeholder="example@gmail.com"/>
                     <label for="pwd">Password</label>
                     <input class="content__input--space principal__input" type="password" name="password" id="pwd" class="form__input" placeholder="********"/>
-                    <button class="content-1__btn primary-btn">Sign in</button>
+                    <button class="content-1__btn primary-btn" type="submit">Sign in</button>
                 </form>
             </div>
             <!-- Form Create account -->
             <div class="form-account clearfix">
                 <h2 class="form-account__h2">Create account</h2>
-                <form action="#" method="GET">
+                <form action="#" method="GET" id="form-sig-in">
                     <label for="name">Name</label>
                     <input class="principal__input" type="text" name="user name" id="name" class="form__input" placeholder="Juanito"/>
+                    <span id="validateName"></span>
                     <label for="email">Email</label>
                     <input class="principal__input" type="email" name="email" id="email" class="form__input" placeholder="example@gmail.com"/>
+                    <span id="validateEmail"></span>
                     <label for="pwd">Password</label>
-                    <input class="principal__input" type="password" name="password" id="pwd" class="form__input" placeholder="********"/>
+                    <input class="principal__input" type="password" name="password" id="pwd-1" class="form__input" placeholder="********"/>
                     <label for="confirm-pwd">Confirm password</label>
-                    <input class="principal__input" class="content__input--space" type="password" name="password" id="confirm-pwd" class="form__input" placeholder="********"/>
-                    <button class="content-1__btn primary-btn">Create</button>
+                    <input class="principal__input" class="content__input--space" type="password" name="confirm-password" id="confirm-pwd" class="form__input" placeholder="********"/>
+                    <p class="form-account--warning" id="error-message">The password doesn't match, try again</p>
+                    <button class="content-1__btn primary-btn" id="crete-account" type="submit">Create</button>
                 </form>
             </div>
         </div>

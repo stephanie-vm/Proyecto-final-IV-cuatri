@@ -40,3 +40,14 @@
 .form-account__h2 {
     border-top: 2px solid $dark-blue;
 }
+.hidden {
+  display: none;
+}
+
+.visually {
+  display: block;
+}
+#error-message {
+  display: none;
+  color: $red;
+}
