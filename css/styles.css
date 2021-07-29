@@ -388,9 +388,6 @@ p {
 .player-btn:active .player-btn__icon path {
   fill: #1C264A; }
 
-.player-btn:focus .player-btn__icon path {
-  fill: #1C264A; }
-
 .player-btn:hover .player-btn__icon path {
   fill: #1C264A; }
 
@@ -591,7 +588,10 @@ select {
   border-top: 2px solid #1C264A; }
 
 canvas {
-  background-color: #C7CEEA; }
+  background-color: #C7CEEA;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 0 0 38px  90px; }
 
 .container-player {
   background-color: #FE9D99;
@@ -602,17 +602,23 @@ canvas {
   width: 1078px; }
 
 .container-player__controls {
-  display: inline-block;
+  display: inline;
   margin-right: 200px; }
 
 .player-select {
-  display: inline-block;
+  display: inline;
   width: 200px; }
 
 .container-player__select {
-  display: inline-block;
+  display: inline;
   margin-left: 90px;
   margin-right: 76px; }
+
+.container-player__title {
+  font-size: 48px;
+  margin: 0;
+  text-align: center;
+  padding: 30px 0 30px 0; }
 
 .content-artist {
   background-color: #FE9D99;

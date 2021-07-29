@@ -15,9 +15,18 @@ class Playersubject {
 
   notify() {
     this.subscribers.forEach((subscriber) => {
-      subscriber.update();
+      subscriber();
     });
   }// notify subscribers
 }
+
+// class Observer {
+//   constructor(executeFunction) {
+//     this.function = executeFunction;
+//   }
+//   update() {
+//     this.function();
+//   }
+// }
 
 export default Playersubject;

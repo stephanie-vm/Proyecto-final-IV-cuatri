@@ -4,10 +4,11 @@ import {
 } from './util.js';
 
 class Canvas {
-  constructor{
+  constructor() {
     this.x = canvas.width / 2;
     this.y = canvas.height / 2;
   }
+
   clear() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
@@ -21,7 +22,7 @@ class Canvas {
       colorFill = 'rgb(254,157,153)';
     }
     ctx.beginPath();
-    ctx.arc(x, y, radius1, 0, 2 * Math.PI);
+    ctx.arc(this.x, this.y, radius1, 0, 2 * Math.PI);
     ctx.fillStyle = colorFill;
     ctx.shadowColor = colorStroke;
     ctx.shadowBlur = 4;
