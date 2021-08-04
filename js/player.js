@@ -27,7 +27,6 @@ function audioPause() {
   audio.pause();
 }
 function audioVisual() {
-  audio.load();
   audio.play();
   const audioAnalyser = audioCtx.createAnalyser();
   audioSrc.connect(audioAnalyser);
