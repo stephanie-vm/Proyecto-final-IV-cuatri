@@ -20,6 +20,7 @@ const stopSubj = new Playersubject(stopBtn, 'click');
 const nextSubj = new Playersubject(nextBtn, 'click');
 const favoritesSubj = new Playersubject(favoritesBtn);
 const drawCanvas = new Canvas();
+const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
 const audioSrc = audioCtx.createMediaElementSource(audio);
 
@@ -27,7 +28,6 @@ function audioPause() {
   audio.pause();
 }
 function audioVisual() {
-  audio.load();
   audio.play();
   const audioAnalyser = audioCtx.createAnalyser();
   audioSrc.connect(audioAnalyser);
