@@ -1,0 +1,33 @@
+.tab-content-playlist {
+  background-color: #C7CEEA;
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  color: #525151;
+  float: right;
+  height: 361px;
+  margin-right: 28px;
+  margin-top: 36px;
+  padding: 20px;
+  width: 765px;
+}
+.secondary-input {
+  background-color: transparent;
+  border:none;
+  border-bottom: 3px solid $dark-blue;
+  display: block;
+  font-family: $secondary-font;
+  height: 40px;
+  margin-bottom: 18px;
+  margin-left: 26px;
+  margin-top: -26px;
+}
+.content-tabs input:focus {
+  background-color: $backround;
+}
+.content-tabs__img {
+  float: right;
+  height: 196px;
+  margin-right: 26px;
+  margin-top: -591px;
+  width: 482px;
+}

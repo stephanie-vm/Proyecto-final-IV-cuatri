@@ -45,17 +45,19 @@
         </ul>
       </div>
     </div>
-    <div class="home-content-1">
-      <h1 class="title-font">Artists</h1>
-      <ul class="home-content-1__ul"></ul>
-    </div>
-    <div class="home-content-2">
-      <h2>Welcome, Juanito</h2>
-      <p>Go to the last song you listened </p>
-      <button class="content-1__btn primary-btn">Play</button>
-    </div>
-  </div>
-  <script src="js/home-logged-in.js" type="module"></script>
+    <!-- content tabs profile user -->
+    <div class="content-tabs clearfix">
+      <form action="GET">
+        <label for="name-user" class="title-tabs">Call me:</label>
+        <input type="text" name="name-user" id="name-user" placeholder="Nickname" class="secondary-input">
+      </form>
+      <!--Conteneder de la info-->
+      <!-- <div class="tab-content-playlist"></div>
+      <div class="tabs">
+        <ul class="tabs-list clearfix">
+        </ul> -->
+        <img class="content-tabs__img clearfix" src="img/profile-user-img.png"></img>
+      </div>
+      <script src="js/profile-user.js" type="module"> </script>
 </body>
-
 </html>

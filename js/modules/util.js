@@ -15,8 +15,9 @@ const getParam = params.get('artistId');
 
 // artist url
 const artistLink = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
+const artistSongLink = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs';
 
-//player
+// player
 const prevBtn = document.querySelector('.btn__prev-js');
 const playBtn = document.querySelector('.btn__play-js');
 const stopBtn = document.querySelector('.btn__stop-js');
@@ -49,4 +50,5 @@ export {
   canvas,
   ctx,
   audio,
+  artistSongLink,
 };

@@ -17,6 +17,10 @@
 .content-1__p {
     margin-bottom: 100px;
 }
+.img-home {
+  width: 530px;
+  height: 400px;
+}
 .content-2 {
     background-color: $light-pink;
     border-radius: $boder-radius;
@@ -35,4 +39,15 @@
 
 .form-account__h2 {
     border-top: 2px solid $dark-blue;
+}
+.hidden {
+  display: none;
+}
+
+.visually {
+  display: block;
+}
+#error-message {
+  display: none;
+  color: $red;
 }
