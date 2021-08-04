@@ -1,3 +1,7 @@
+// canvas
+const canvas = document.querySelector('canvas');
+
+
 // add favorite's modal variables :
 const openModal = document.getElementById('btn-modal--open');
 const closeModal = document.getElementsByClassName('btn-modal--close');
@@ -7,11 +11,6 @@ const overlay = document.getElementsByClassName('modal__overlay');
 const openModalChanges = document.getElementById('btn-modal-changes--open');
 const closeModalChanges = document.getElementsByClassName('btn-modal-changes--close');
 const overlayChanges = document.getElementsByClassName('modal__overlay-changes');
-
-// view artist: variables of tabs
-const urlArtist = new URL(window.location);
-const params = new URLSearchParams(urlArtist.search);
-const getParam = params.get('artistId');
 
 // artist url
 const artistLink = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
@@ -25,14 +24,11 @@ const nextBtn = document.querySelector('.btn__next-js');
 const favoritesBtn = document.querySelector('.btn__favorites-js');
 const playerSelect = document.querySelector('.player__select-js');
 
-// canvas
-const canvas = document.querySelector('canvas');
-const ctx = canvas.getContext('2d');
-
 // temporal
 const audio = document.querySelector('#audio');
 
 export {
+  canvas,
   openModal,
   closeModal,
   overlay,
@@ -40,15 +36,12 @@ export {
   closeModalChanges,
   overlayChanges,
   artistLink,
-  getParam,
+  artistSongLink,
   prevBtn,
   playBtn,
   stopBtn,
   nextBtn,
   favoritesBtn,
   playerSelect,
-  canvas,
-  ctx,
   audio,
-  artistSongLink,
 };

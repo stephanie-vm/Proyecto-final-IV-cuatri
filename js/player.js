@@ -5,8 +5,6 @@ import {
   nextBtn,
   favoritesBtn,
   audio,
-  closeModal,
-  overlay,
   playerSelect,
 } from './modules/util.js';
 import {
@@ -15,24 +13,15 @@ import {
 import Playersubject from './modules/player-observer.js';
 import Canvas from './modules/canvas.js';
 
-const prevSubj = new Playersubject(prevBtn);
-const playSubj = new Playersubject(playBtn);
-const stopSubj = new Playersubject(stopBtn);
-const nextSubj = new Playersubject(nextBtn);
+const selectSubj = new Playersubject(playerSelect, 'change');
+const prevSubj = new Playersubject(prevBtn, 'click');
+const playSubj = new Playersubject(playBtn, 'click');
+const stopSubj = new Playersubject(stopBtn, 'click');
+const nextSubj = new Playersubject(nextBtn, 'click');
 const favoritesSubj = new Playersubject(favoritesBtn);
 const drawCanvas = new Canvas();
 const audioCtx = new AudioContext();
 const audioSrc = audioCtx.createMediaElementSource(audio);
-
-playSubj.suscribe(audioVisual);
-stopSubj.suscribe(audioPause);
-
-stopSubj.button.addEventListener('click', () => {
-  stopSubj.notify();
-});
-playSubj.button.addEventListener('click', () => {
-  playSubj.notify();
-});
 
 function audioPause() {
   audio.pause();
@@ -63,6 +52,7 @@ function audioVisual() {
   }
   draw();
 }
-playerSelect.addEventListener('change', () => {
-  selectModal(closeModal, overlay);
-});
+
+playSubj.subscribe(audioVisual);
+stopSubj.subscribe(audioPause);
+selectSubj.subscribe(selectModal);

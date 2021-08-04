@@ -9,4 +9,4 @@ async function getApi(link) {
 
 export {
   getApi,
-}
+};

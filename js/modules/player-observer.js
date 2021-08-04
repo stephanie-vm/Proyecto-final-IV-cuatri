@@ -1,17 +1,16 @@
 class Playersubject {
-  constructor(button) {
+  constructor(button, event) {
     this.subscribers = []; // colection of suscribers
-    this.button = button; // Button subject
+    this.button = button;
+    this.button.addEventListener(event, () => {
+      this.notify();
+    });
   }
 
-  suscribe(subscriber) {
+  subscribe(subscriber) {
     this.subscribers.push(subscriber);
     // this adds the new suscriber from collection
   }
-
-  unsuscribefunction(subscriber) {
-    this.subscribers = this.subscribers.filter((sub) => sub !== subscriber);
-  }// this removes the suscriber from collection
 
   notify() {
     this.subscribers.forEach((subscriber) => {
@@ -19,14 +18,4 @@ class Playersubject {
     });
   }// notify subscribers
 }
-
-// class Observer {
-//   constructor(executeFunction) {
-//     this.function = executeFunction;
-//   }
-//   update() {
-//     this.function();
-//   }
-// }
-
 export default Playersubject;

@@ -2,12 +2,16 @@
 import { getApi } from './modules/services.js';
 // util varaibles of differents links for doing request api
 import {
-  getParam,
   artistLink,
   artistSongLink,
 } from './modules/util.js';
 // get data of api
 const dataArtist = await getApi(artistLink);
+
+// view artist: variables of tabs
+const urlArtist = new URL(window.location);
+const params = new URLSearchParams(urlArtist.search);
+const getParam = params.get('artistId');
 
 // function for create and render html  about name's artists
 function nameArtistsTabs() {
