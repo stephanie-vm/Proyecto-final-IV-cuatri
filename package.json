@@ -2,11 +2,9 @@
   "name": "proyecto-final",
   "version": "1.0.0",
   "description": "proyecto final IV cuatrimestre",
-  "main": "app.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "start:dev": "nodemon app.js",
     "scss": "node-sass --watch scss -o css",
     "sass-build": "node-sass sass -o public/css --output-style compressed",
     "dev-server": "live-server --watch=\"index.html,sass,js\"",

@@ -1,3 +1,9 @@
+canvas{
+  background-color: $light-blue;
+  border-radius: $boder-radius;
+  box-shadow: $box-shadow;
+  margin: 0 0 38px  90px;
+}
 .container-player{
   background-color: $light-pink;
   border-radius: $boder-radius;
@@ -7,15 +13,21 @@
   width: 1078px;
 }
 .container-player__controls{
-  display: inline-block;
+  display: inline;
   margin-right: 200px;
 }
 .player-select{
-  display: inline-block;
+  display: inline;
   width: 200px;
 }
 .container-player__select{
-  display: inline-block;
+  display: inline;
   margin-left: 90px;
   margin-right: 76px;
+}
+.container-player__title{
+  font-size: 48px;
+  margin: 0;
+  text-align: center;
+  padding: 30px 0 30px 0;
 }

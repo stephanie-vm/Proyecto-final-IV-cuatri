@@ -1,13 +1,32 @@
-class PlayerObserver{
-  constructor(){
-    this.observers = [];
+class Playersubject {
+  constructor(button) {
+    this.subscribers = []; // colection of suscribers
+    this.button = button; // Button subject
   }
 
-  suscribe(beingWatch){
-    this.observers.push(NewObserver);
+  suscribe(subscriber) {
+    this.subscribers.push(subscriber);
+    // this adds the new suscriber from collection
   }
 
-  unsuscribe(stopWatch){
-    this.observers = this.observers.filter(observer => observer != )
-  }
+  unsuscribefunction(subscriber) {
+    this.subscribers = this.subscribers.filter((sub) => sub !== subscriber);
+  }// this removes the suscriber from collection
+
+  notify() {
+    this.subscribers.forEach((subscriber) => {
+      subscriber();
+    });
+  }// notify subscribers
 }
+
+// class Observer {
+//   constructor(executeFunction) {
+//     this.function = executeFunction;
+//   }
+//   update() {
+//     this.function();
+//   }
+// }
+
+export default Playersubject;
