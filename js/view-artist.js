@@ -44,26 +44,66 @@ function tabsContentArtist() {
     profileArtist.appendChild(imgArtist);
     profileArtist.appendChild(descriptionArtist);
     infoContentTabs.appendChild(profileArtist);
+    tabsContentsongs(dataArtist[i].id, infoContentTabs)
   }
 }
 tabsContentArtist();
-
-async function prueba() {
-  for (let i = 0; i < dataArtist.length; i++) {
-    const songsLink = artistSongLink + '/' + dataArtist[i].id;
-    const viewSongs = await getApi(songsLink);
-  }
-  const content2 = document.querySelectorAll('.tab-content-info');
+async function tabsContentsongs(dataArtist, contentInfoTabs) {
+  const songsLink = artistSongLink + '/' + dataArtist;
+  const viewSongs = await getApi(songsLink);
+  const songsArtist = document.createElement('div');
+  const listSongs = document.createElement('ul');
+  listSongs.setAttribute('class', 'tabs-content__ul clearfix')
+  songsArtist.setAttribute('class', 'list-songs');
+  songsArtist.appendChild(listSongs)
+  contentInfoTabs.appendChild(songsArtist);
   for (let i = 0; i < viewSongs.length; i++) {
-    const listSongs = document.createElement('ul');
     const liSongsTabs = document.createElement('li');
-    liSongsTabs.innerText = `${viewSongs[0].name}`;
-    content2[0].appendChild(listSongs);
+    liSongsTabs.setAttribute('class', 'tabs-content__li');
+    const imgArtistSong = document.createElement('img');
+    imgArtistSong.setAttribute('src', `${viewSongs[i].image}`);
+    imgArtistSong.setAttribute('class', 'tabs-content__img-song');
+    liSongsTabs.appendChild(imgArtistSong);
+    const nameSong = document.createElement('p');
+    nameSong.setAttribute('class', 'tabs-content-name-song');
+    liSongsTabs.appendChild(nameSong)
+    nameSong.innerText = `${viewSongs[i].name}`;
+    const albumSong = document.createElement('p');
+    albumSong.setAttribute('class', 'tabs-content-album-song');
+    const anchordImgArtsit = document.createElement('a');
+    anchordImgArtsit.setAttribute('href', '#')
+    anchordImgArtsit.setAttribute('dataId', `${viewSongs[i].name}`);
+    anchordImgArtsit.setAttribute('id', 'anchord-svg');
+    const svgIcon = `
+    <svg class="player-btn__icon player-icon" aria-hidden="true" focusable="false" width="60" height="66" viewBox="0 0 60 66"    fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#filter0_d)">
+        <path
+          d="M53.3716 33.4893L12.0141 57.2789C8.50428 59.2957 4 56.8536 4 52.7877V5.20862C4 1.14919 8.49778 -1.29935 12.0141 0.723918L53.3716 24.5135C54.17 24.9653 54.8336 25.6185 55.2953 26.4066C55.7569 27.1948 56 28.09 56 29.0014C56 29.9128 55.7569 30.808 55.2953 31.5962C54.8336 32.3843 54.17 33.0375 53.3716 33.4893Z"
+          fill="#FD635D" />
+      </g>
+      <defs>
+        <filter id="filter0_d" x="0" y="0" width="60" height="66" filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+          <feOffset dy="4" />
+          <feGaussianBlur stdDeviation="2" />
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+        </filter>
+      </defs>
+    </svg>
+    `
+
+    anchordImgArtsit.innerHTML = svgIcon;
+    liSongsTabs.appendChild(anchordImgArtsit);
+    liSongsTabs.appendChild(albumSong);
+    albumSong.innerText = `${viewSongs[i].album}`;
     listSongs.appendChild(liSongsTabs);
   }
-
 }
-prueba();
+
 
 //Function for check id and put the class active in the moment
 function checkId(items, content) {
@@ -111,18 +151,3 @@ function changeStatus() {
   checkId(items, content);
 }
 changeStatus();
-
-//Canciones
-// //songs list
-// //CANCIONES
-// const songsLink = artistSongLink + '/' + dataArtist[i].id;
-// const viewSongs = await getApi(songsLink);
-// const listSongs = document.createElement('ul');
-// const liSongsTabs = document.createElement('li');
-// for (let a = 0; a < viewSongs.length; a++) {
-//   const nameArtist = document.createElement('h3');
-//   liSongsTabs.appendChild(nameArtist);
-//   listSongs.appendChild(liSongsTabs);
-//   nameArtist.innerText = `${viewSongs[a].name}`;
-// }
-// infoContentTabs.appendChild(listSongs);
