@@ -28,9 +28,8 @@ function audioPause() {
   audio.pause();
 }
 function audioVisual() {
-  if (audioCtx.state === 'suspended') {
-    audioCtx.resume();
-}
+  audioCtx.resume();
+
   audio.play();
   const audioAnalyser = audioCtx.createAnalyser();
   audioSrc.connect(audioAnalyser);
