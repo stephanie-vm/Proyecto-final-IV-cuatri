@@ -75,8 +75,9 @@ async function tabsContentsongs(dataArtist, contentInfoTabs) {
     const albumSong = document.createElement('p');
     albumSong.setAttribute('class', 'tabs-content-album-song');
     const anchordImgArtsit = document.createElement('a');
-    anchordImgArtsit.setAttribute('href', '#')
+    anchordImgArtsit.setAttribute('href', `player.html?playList=artist&&song=${viewSongs[i].id}`)
     anchordImgArtsit.setAttribute('dataId', `${viewSongs[i].name}`);
+    anchordImgArtsit.setAttribute('aria-labelledby', 'anchor-label');
     anchordImgArtsit.setAttribute('id', 'anchord-svg');
     const svgIcon = `
     <svg class="player-btn__icon player-icon" aria-hidden="true" focusable="false" width="60" height="66" viewBox="0 0 60 66"    fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,8 +100,12 @@ async function tabsContentsongs(dataArtist, contentInfoTabs) {
       </defs>
     </svg>
     `
-
+    const spanImgArtsit = document.createElement('span');
+    spanImgArtsit.innerText = 'play';
+    spanImgArtsit.hidden = true;
+    spanImgArtsit.setAttribute('id', 'anchor-label');
     anchordImgArtsit.innerHTML = svgIcon;
+    anchordImgArtsit.appendChild(spanImgArtsit);
     liSongsTabs.appendChild(anchordImgArtsit);
     liSongsTabs.appendChild(albumSong);
     albumSong.innerText = `${viewSongs[i].album}`;

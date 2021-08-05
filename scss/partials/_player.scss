@@ -1,3 +1,9 @@
+a:active .player-btn__icon path{
+  fill: $dark-blue;
+}
+a:hover .player-btn__icon path{
+  fill: $dark-blue;
+}
 canvas{
   background-color: $light-blue;
   border-radius: $boder-radius;
