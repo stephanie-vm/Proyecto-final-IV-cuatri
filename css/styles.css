@@ -700,28 +700,8 @@ canvas {
   height: 530px;
   margin-right: 28px;
   margin-top: -66px;
-  overflow-y: scroll;
   padding: 20px;
   width: 735px; }
-
-.tab-content::-webkit-scrollbar {
-  -webkit-appearance: none; }
-
-.tab-content::-webkit-scrollbar:vertical {
-  width: 10px; }
-
-.tab-content::-webkit-scrollbar-button:increment,
-.tab-content::-webkit-scrollbar-button {
-  display: none; }
-
-.tab-content::-webkit-scrollbar-thumb {
-  background-color: #1C264A;
-  border-radius: 20px;
-  border: 2px solid #FD635D; }
-
-.tab-content::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background-color: #FD635D; }
 
 .content-artist__img {
   margin-top: -210px;
@@ -754,7 +734,29 @@ canvas {
 
 .tabs-content__ul {
   float: right;
-  margin-top: -500px; }
+  margin-top: -500px;
+  height: 500px;
+  overflow-y: scroll;
+  display: block; }
+
+.tabs-content__ul::-webkit-scrollbar {
+  -webkit-appearance: none; }
+
+.tabs-content__ul::-webkit-scrollbar:vertical {
+  width: 10px; }
+
+.tabs-content__ul::-webkit-scrollbar-button:increment,
+.tabs-content__ul::-webkit-scrollbar-button {
+  display: none; }
+
+.tabs-content__ul::-webkit-scrollbar-thumb {
+  background-color: #1C264A;
+  border-radius: 20px;
+  border: 2px solid #FD635D; }
+
+.tabs-content__ul::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #FD635D; }
 
 .tabs-content__li {
   border-bottom: 4px solid #1C264A;
