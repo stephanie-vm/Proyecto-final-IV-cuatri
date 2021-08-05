@@ -1,7 +1,6 @@
 // canvas
 const canvas = document.querySelector('canvas');
 
-
 // add favorite's modal variables :
 const openModal = document.getElementById('btn-modal--open');
 const closeModal = document.getElementsByClassName('btn-modal--close');
@@ -27,6 +26,14 @@ const playerSelect = document.querySelector('.player__select-js');
 // temporal
 const audio = document.querySelector('#audio');
 
+// view artist: variables of tabs
+const urlArtist = new URL(window.location);
+const params = new URLSearchParams(urlArtist.search);
+const artistIdParam = params.get('artistId');
+const playListParam = params.get('playList');
+const songParam = params.get('song');
+const artistPlaylistParam = params.get('artistPlaylist');
+
 export {
   canvas,
   openModal,
@@ -44,4 +51,8 @@ export {
   favoritesBtn,
   playerSelect,
   audio,
+  artistIdParam,
+  playListParam,
+  songParam,
+  artistPlaylistParam,
 };

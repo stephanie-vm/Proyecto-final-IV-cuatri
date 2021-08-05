@@ -4,14 +4,10 @@ import { getApi } from './modules/services.js';
 import {
   artistLink,
   artistSongLink,
+  artistIdParam,
 } from './modules/util.js';
 // get data of api
 const dataArtist = await getApi(artistLink);
-
-// view artist: variables of tabs
-const urlArtist = new URL(window.location);
-const params = new URLSearchParams(urlArtist.search);
-const getParam = params.get('artistId');
 
 // function for create and render html  about name's artists
 function nameArtistsTabs() {
@@ -75,7 +71,7 @@ async function tabsContentsongs(dataArtist, contentInfoTabs) {
     const albumSong = document.createElement('p');
     albumSong.setAttribute('class', 'tabs-content-album-song');
     const anchordImgArtsit = document.createElement('a');
-    anchordImgArtsit.setAttribute('href', `player.html?playList=artist&&song=${viewSongs[i].id}`)
+    anchordImgArtsit.setAttribute('href', `player.html?playList=artist&&song=${viewSongs[i].id}&&artistPlaylist=${dataArtist}`)
     anchordImgArtsit.setAttribute('dataId', `${viewSongs[i].name}`);
     anchordImgArtsit.setAttribute('aria-labelledby', 'anchor-label');
     anchordImgArtsit.setAttribute('id', 'anchord-svg');
@@ -116,9 +112,9 @@ async function tabsContentsongs(dataArtist, contentInfoTabs) {
 
 //Function for check id and put the class active in the moment
 function checkId(items, content) {
-  if (getParam) {
+  if (artistIdParam) {
     for (let i = 0; i < items.length; i++) {
-      if (items[i].dataset.id == getParam) {
+      if (items[i].dataset.id == artistIdParam) {
         items[i].classList.add('js-active');
         const id = items[i].getAttribute('href').substring(1);
         if (content[i].getAttribute('id') === id) {

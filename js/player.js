@@ -6,12 +6,18 @@ import {
   favoritesBtn,
   audio,
   playerSelect,
+  playListParam,
+  songParam,
+  artistPlaylistParam,
+  artistSongLink,
 } from './modules/util.js';
 import {
   selectModal,
 } from './modules/events.js';
 import Playersubject from './modules/player-observer.js';
 import Canvas from './modules/canvas.js';
+// general function, get api and data
+import { getApi } from './modules/services.js';
 
 const selectSubj = new Playersubject(playerSelect, 'change');
 const prevSubj = new Playersubject(prevBtn, 'click');
@@ -55,6 +61,47 @@ function audioVisual() {
   draw();
 }
 
+function songPlay(i, array) {
+  let index = i;
+  audio.src = array[index].audio;
+  console.log(index);
+  function nextsong() {
+    index++;
+    if (index > array.length - 1) {
+      index = 0;
+    }
+    audio.pause();
+    songPlay(index, array);
+    audio.load();
+    audio.play();
+  }
+  function prevsong() {
+    index--;
+    if (index < 0) {
+      index = array.length - 1;
+    }
+    songPlay(index, array);
+    audio.load();
+    audio.play();
+  }
+  nextSubj.subscribe(nextsong);
+  prevSubj.subscribe(prevsong);
+}
+
+async function selectPlaylist() {
+  if (playListParam === 'artist') {
+    const songsLink = `${artistSongLink}/${artistPlaylistParam}`;
+    const viewSongs = await getApi(songsLink);
+    console.log(viewSongs);
+    for (let i = 0; i < viewSongs.length; i++) {
+      if (viewSongs[i].id === songParam) {
+        songPlay(i, viewSongs);
+      }
+    }
+  }
+}
+
+window.onload = selectPlaylist();
 playSubj.subscribe(audioVisual);
 stopSubj.subscribe(audioPause);
 selectSubj.subscribe(selectModal);
