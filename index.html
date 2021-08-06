@@ -1,80 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link  rel="icon"   href="img/just-symphony.png" type="image/png" />
-    <title>just symphony</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Karla&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/just-symphony.png" type="image/png" />
+  <title>just symphony</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Karla&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="backround-wave">
-        <svg class="svg-wave" fill="none" viewBox="0 0 1440 502" xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#a)">
-            <path d="m425 51.5c-173.73 3.3916-362 135-425 152.5v-211h1441v500.5c-75-62.848-62-128.5-132.5-199.5-99.43-100.14-260.16 65.394-388.5 0-183.5-93.5-264.5-247-495-242.5z" fill="#C7CEEA"/>
-            </g>
-            <defs>
-            <filter id="a" x="-4" y="-7" width="1449" height="508.5" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-            <feOffset dy="4"/>
-            <feGaussianBlur stdDeviation="2"/>
-            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-            <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
-            <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-            </filter>
-            </defs>
-        </svg>
+  <div class="backround-wave">
+    <svg class="svg-wave" fill="none" viewBox="0 0 1440 502" xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#a)">
+        <path
+          d="m425 51.5c-173.73 3.3916-362 135-425 152.5v-211h1441v500.5c-75-62.848-62-128.5-132.5-199.5-99.43-100.14-260.16 65.394-388.5 0-183.5-93.5-264.5-247-495-242.5z"
+          fill="#C7CEEA" />
+      </g>
+      <defs>
+        <filter id="a" x="-4" y="-7" width="1449" height="508.5" color-interpolation-filters="sRGB"
+          filterUnits="userSpaceOnUse">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+          <feOffset dy="4" />
+          <feGaussianBlur stdDeviation="2" />
+          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
+          <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+        </filter>
+      </defs>
+    </svg>
+  </div>
+  <div class="wrapper">
+    <div class="content-1 clearfix">
+      <img class="logo" src="img/just-symphony.png" alt="just-symphony">
+      <p class="title-font">Just symphony <span> sign up </span>
+        </br>
+        to enjoy!!!</p>
+      <p class="content-1__p">
+        With over 70 million songs, exclusive releases, and tons of
+        </br>
+        interviews and music videos, TIDAL brings you closer to
+        </br>
+        the artists you listen to. Whithout ads.
+      </p>
+      <img class="img-home" src="img/image-decorative-home.png"></img>
     </div>
-    <div class="wrapper">
-        <div class="content-1 clearfix">
-            <img class="logo"src="img/just-symphony.png" alt="just-symphony">
-            <p class="title-font">Just symphony <span> sign up </span>
-            </br>
-            to enjoy!!!</p>
-            <p class="content-1__p">
-                With over 70 million songs, exclusive releases, and tons of
-                </br>
-                interviews and music videos, TIDAL brings you closer to
-                </br>
-                the artists you listen to. Whithout ads.
-            </p>
-            <img class="img-home" src="img/image-decorative-home.png"></img>
-        </div>
-        <!-- Form sig in -->
-        <div class="content-2 clearfix">
-            <div class="form-sign">
-                <h2>Sign in</h2>
-                <form action="#" method="GET">
-                    <label for="email-1">Email</label>
-                    <input class="principal__input" type="email" name="email" id="email-1" class="form__input" placeholder="example@gmail.com"/>
-                    <label for="pwd">Password</label>
-                    <input class="content__input--space principal__input" type="password" name="password" id="pwd" class="form__input" placeholder="********"/>
-                    <button class="content-1__btn primary-btn" type="submit">Sign in</button>
-                </form>
-            </div>
-            <!-- Form Create account -->
-            <div class="form-account clearfix">
-                <h2 class="form-account__h2">Create account</h2>
-                <form action="#" method="GET" id="form-sig-in">
-                    <label for="name">Name</label>
-                    <input class="principal__input" type="text" name="user name" id="name" class="form__input" placeholder="Juanito"/>
-                    <span id="validateName"></span>
-                    <label for="email">Email</label>
-                    <input class="principal__input" type="email" name="email" id="email" class="form__input" placeholder="example@gmail.com"/>
-                    <span id="validateEmail"></span>
-                    <label for="pwd">Password</label>
-                    <input class="principal__input" type="password" name="password" id="pwd-1" class="form__input" placeholder="********"/>
-                    <label for="confirm-pwd">Confirm password</label>
-                    <input class="principal__input" class="content__input--space" type="password" name="confirm-password" id="confirm-pwd" class="form__input" placeholder="********"/>
-                    <p class="form-account--warning" id="error-message">The password doesn't match, try again</p>
-                    <button class="content-1__btn primary-btn" id="crete-account" type="submit">Create</button>
-                </form>
-            </div>
-        </div>
+    <!-- Form sig in -->
+    <div class="content-2 clearfix">
+      <div class="form-sign">
+        <h2>Sign in</h2>
+        <form action="#" method="GET" id="form-login">
+          <label for="email-1">Email</label>
+          <input class="principal__input required-login-js" type="email" name="email" id="email-1" class="form__input"
+            placeholder="example@gmail.com" />
+          <p class="form-account--warning" id="validateEmailLogin"></p>
+          <label for="pwd">Password</label>
+          <input class="content__input--space principal__input required-login-js" type="password" name="password" id="pwd"
+            class="form__input" placeholder="********" autocomplete="off"/>
+          <button class="content-1__btn primary-btn" type="submit">Sign in</button>
+          <p class="form-account--warning" id="error-login-message"></p>
+        </form>
+      </div>
+      <!-- Form Create account -->
+      <div class="form-account clearfix">
+        <h2 class="form-account__h2">Create account</h2>
+        <form action="#" method="GET" id="form-sig-in">
+          <label for="name">Name</label>
+          <input class="principal__input required-sigin-js" type="text" name="user name" id="name" class="form__input"
+            placeholder="Juanito" />
+          <span id="validateName"></span>
+          <label for="email">Email</label>
+          <input class="principal__input required-sigin-js" type="email" name="email" id="email" class="form__input"
+            placeholder="example@gmail.com" />
+          <p class="form-account--warning" id="validateEmailSigin"></p>
+          <label for="pwd">Password</label>
+          <input class="principal__input required-sigin-js" type="password" name="password" id="pwd-1" class="form__input"
+            placeholder="********" autocomplete="off"/>
+          <label for="confirm-pwd">Confirm password</label>
+          <input class="principal__input required-sigin-js" class="content__input--space" type="password" name="confirm-password"
+            id="confirm-pwd" class="form__input" placeholder="********" autocomplete="off"/>
+          <p class="form-account--warning" id="error-message"></p>
+          <button class="content-1__btn primary-btn" id="crete-account" type="submit">Create</button>
+          <p class="form-account--warning" id="error-sigin-message"></p>
+        </form>
+      </div>
     </div>
-    <script src="js/index.js" type="module"></script>
+  </div>
+  <script src="js/index.js" type="module"></script>
 </body>
+
 </html>

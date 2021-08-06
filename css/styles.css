@@ -598,8 +598,10 @@ select {
   display: block; }
 
 #error-message {
-  display: none;
   color: #E42E16; }
+
+.form-account--warning {
+  display: none; }
 
 a:active .player-btn__icon path {
   fill: #1C264A; }
