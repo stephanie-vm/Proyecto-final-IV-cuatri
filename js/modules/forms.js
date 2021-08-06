@@ -60,7 +60,7 @@ function getIvalid(required) {
   return invalids;
 }
 
-function validFieldLogin(form, required) {
+function validFieldLogin(form, required, msjForm) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -77,7 +77,7 @@ function validFieldLogin(form, required) {
   });
 }
 
-function validFieldSigin(form, required) {
+function validFieldSigin(form, required, msjForm) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
