@@ -18,9 +18,12 @@ async function getBackend(link, methods) {
 }
 // await getBackend(songsLink, 'DELETE');
 
-async function getBackendBody(link, methods, info) {
-  const result = await fetch(link, {
-    method: methods,
+async function getBackendBody(info) {
+  const result = await fetch('https://paul-proyect1887.herokuapp.com/user', {
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: 'POST',
     body: JSON.stringify(info),
   })
     .then((response) => response.json())

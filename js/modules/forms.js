@@ -93,11 +93,12 @@ function validFieldSigin(form, required, msjForm) {
       const emailInfo = form.elements[1].value;
       const passwordInfo = form.elements[3].value;
       const infoBody = {
-        name: nameInfo,
-        email: emailInfo,
-        password: passwordInfo,
+        "name": nameInfo,
+        "email": emailInfo,
+        "password": passwordInfo,
       };
-      const data = await getBackendBody('https://paul-proyect1887.herokuapp.com/user', 'POST', infoBody);
+      console.log( JSON.stringify(infoBody));
+      const data = await getBackendBody(infoBody);
       console.log(data);
     }
   });
