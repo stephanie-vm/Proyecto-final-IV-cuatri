@@ -1,6 +1,5 @@
-import {
-  canvas,
-} from './util.js';
+// canvas
+const canvas = document.querySelector('canvas');
 
 class Canvas {
   constructor() {

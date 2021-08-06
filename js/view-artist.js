@@ -4,10 +4,14 @@ import { getApi } from './modules/services.js';
 import {
   artistLink,
   artistSongLink,
-  artistIdParam,
+  params,
 } from './modules/util.js';
+
 // get data of api
 const dataArtist = await getApi(artistLink);
+
+// url params
+const artistIdParam = params.get('artistId');
 
 // function for create and render html  about name's artists
 function nameArtistsTabs() {
@@ -25,6 +29,7 @@ function nameArtistsTabs() {
   }
 }
 nameArtistsTabs();
+
 //Function for create and render html about artist's image, description, songs and albums.
 function tabsContentArtist() {
   for (let i = 0; i < dataArtist.length; i++) {
@@ -47,6 +52,7 @@ function tabsContentArtist() {
     tabsContentsongs(dataArtist[i].id, infoContentTabs)
   }
 }
+
 tabsContentArtist();
 async function tabsContentsongs(dataArtist, contentInfoTabs) {
   const songsLink = artistSongLink + '/' + dataArtist;
@@ -109,7 +115,6 @@ async function tabsContentsongs(dataArtist, contentInfoTabs) {
   }
 }
 
-
 //Function for check id and put the class active in the moment
 function checkId(items, content) {
   if (artistIdParam) {
@@ -127,6 +132,7 @@ function checkId(items, content) {
     items[0].classList.add('js-active');
   }
 }
+
 //Function for controller event click and remove or add the correct class
 function tabsEvent(items, content) {
   for (let i = 0; i < items.length; i++) {
@@ -148,6 +154,7 @@ function tabsEvent(items, content) {
     });
   }
 }
+
 // Function for change the style, in the moment that just will be active
 function changeStatus() {
   const items = document.querySelectorAll('.tabs-list-item');
