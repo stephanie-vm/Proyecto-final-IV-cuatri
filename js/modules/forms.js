@@ -60,7 +60,7 @@ function getIvalid(required) {
   return invalids;
 }
 
-function validFieldLogin(form, required, callback) {
+function validFieldLogin(form, required) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -72,7 +72,7 @@ function validFieldLogin(form, required, callback) {
       msjForm.innerText = 'Try again: verify the red fields';
       msjForm.style.color = 'red';
     } else {
-      callback();
+      console.log('hola');
     }
   });
 }
