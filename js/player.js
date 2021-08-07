@@ -8,6 +8,7 @@ import {
   anchorArtist,
   backendLink,
   optionCreate,
+  songLink,
 } from './modules/util.js';
 import {
   selectModal,
@@ -20,9 +21,6 @@ import {
   getBackendBody,
   getBackend,
 } from './modules/services.js';
-
-// url params
-const userId = params.get('userId');
 
 // player
 const prevBtn = document.querySelector('.btn__prev-js');
@@ -56,6 +54,7 @@ const audioSrc = audioCtx.createMediaElementSource(audio);
 const playListParam = params.get('playList');
 const songParam = params.get('song');
 const artistPlaylistParam = params.get('artistPlaylist');
+const userId = params.get('userId');
 
 function audioPause() {
   audio.pause();
@@ -143,6 +142,61 @@ if (playListParam === 'artist') {
       break;
     }
   }
+}else if (playListParam === 'recents') {
+  const dataRecents = await getBackend('GET', `${backendLink}/rectmusic/${userId}`);
+  let length = dataRecents.data[0].listSongs.length;
+  const newArray = [];
+  if (dataRecents.data[0].listSongs.length > 10) {
+    length = 10;
+  }
+  for (let i = 0; i < length; i++) {
+    console.log(dataRecents.data[0].listSongs[i])
+    const songs = await getApi(`${songLink}${dataRecents.data[0].listSongs[i]}`);
+    const songObj = {
+      audio: songs.audio,
+      name: songs.name,
+      id: songs.id,
+    }
+    newArray.push(songObj)
+  }
+  songPlay(songParam, newArray);
+} else if (playListParam === 'custom') {
+  const playlistId = params.get('playListId');
+  const dataPlaylists = await getBackend('GET', `${backendLink}/playlist/${playlistId}`);
+  const newArray = [];
+  for (let i = 0; i < dataPlaylists.data.listSongs.length; i++) {
+    const songs = await getApi(`${songLink}${dataPlaylists.data.listSongs[i]}`);
+    const songObj = {
+      audio: songs.audio,
+      name: songs.name,
+      id: songs.id
+    }
+    newArray.push(songObj);
+  }
+  for (let i = 0; i < newArray.length; i++) {
+    if (newArray[i].id == songParam) {
+      songPlay(i, newArray);
+    }
+  }
+} else if (!playListParam) {
+  const dataRecents = await getBackend('GET', `${backendLink}/rectmusic/${userId}`);
+  let length = dataRecents.data[0].listSongs.length;
+  const newArray = [];
+  if (dataRecents.data[0].listSongs.length > 10) {
+    length = 10;
+  }
+  for (let i = 0; i < length; i++) {
+    console.log(dataRecents.data[0].listSongs[i])
+    const songs = await getApi(`${songLink}${dataRecents.data[0].listSongs[i]}`);
+    const songObj = {
+      audio: songs.audio,
+      name: songs.name,
+      id: songs.id,
+    }
+    newArray.push(songObj)
+  }
+  console.log(newArray)
+  songPlay(0, newArray);
 }
 
 async function getPlaylist(){

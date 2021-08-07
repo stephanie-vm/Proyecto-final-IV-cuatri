@@ -22,6 +22,7 @@ const artistData = await getApi(artistLink);
 const setUserName = document.querySelector('.set-name-js');
 const parentSetUser = document.querySelector('.home-content-js');
 const textSetUser = document.querySelector('.home-content-p-js');
+const anchorRecent = document.querySelector('.anchor-recent-js');
 
 function artistsHome(data) {
 
@@ -68,6 +69,7 @@ async function getUserInfo(){
 artistsHome(artistData);
 getUserInfo();
 
+anchorRecent.setAttribute('href', 'player.html?playList=recents&&song=0&&userId=610d5df3f6ac72000462a0e1');
 anchorHome.setAttribute('href', `home-logged-in.html?userId=${userId}`);
 anchorProfile.setAttribute('href', `profile-user.html?userId=${userId}`);
 anchorPlayer.setAttribute('href', `player.html?userId=${userId}`);
