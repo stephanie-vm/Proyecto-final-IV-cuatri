@@ -5,6 +5,10 @@ import {
   artistLink,
   artistSongLink,
   params,
+  anchorHome,
+  anchorProfile,
+  anchorPlayer,
+  anchorArtist,
 } from './modules/util.js';
 
 // get data of api
@@ -12,6 +16,7 @@ const dataArtist = await getApi(artistLink);
 
 // url params
 const artistIdParam = params.get('artistId');
+const userId = params.get('userId');
 
 // function for create and render html  about name's artists
 function nameArtistsTabs() {
@@ -77,7 +82,7 @@ async function tabsContentsongs(dataArtist, contentInfoTabs) {
     const albumSong = document.createElement('p');
     albumSong.setAttribute('class', 'tabs-content-album-song');
     const anchordImgArtsit = document.createElement('a');
-    anchordImgArtsit.setAttribute('href', `player.html?playList=artist&&song=${viewSongs[i].id}&&artistPlaylist=${dataArtist}`)
+    anchordImgArtsit.setAttribute('href', `player.html?playList=artist&&song=${viewSongs[i].id}&&artistPlaylist=${dataArtist}&&userId=${userId}`)
     anchordImgArtsit.setAttribute('dataId', `${viewSongs[i].name}`);
     anchordImgArtsit.setAttribute('aria-labelledby', 'anchor-label');
     anchordImgArtsit.setAttribute('id', 'anchord-svg');
@@ -163,3 +168,8 @@ function changeStatus() {
   checkId(items, content);
 }
 changeStatus();
+
+anchorHome.setAttribute('href', `home-logged-in.html?userId=${userId}`);
+anchorProfile.setAttribute('href', `profile-user.html?userId=${userId}`);
+anchorPlayer.setAttribute('href', `player.html?userId=${userId}`);
+anchorArtist.setAttribute('href', `view-artist.html?userId=${userId}`);

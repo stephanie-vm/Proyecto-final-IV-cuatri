@@ -7,10 +7,12 @@ async function getApi(link) {
   return result;
 }
 
-async function getBackend(link, methods) {
-  const result = await fetch(link, {
-    method: methods,
-
+async function getBackend(methodType, url) {
+  const result = await fetch(url, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    method: methodType,
   })
     .then((response) => response.json())
     .then((data) => data);
@@ -18,12 +20,12 @@ async function getBackend(link, methods) {
 }
 // await getBackend(songsLink, 'DELETE');
 
-async function getBackendBody(info) {
-  const result = await fetch('https://paul-proyect1887.herokuapp.com/user', {
+async function getBackendBody(info, methodType, url) {
+  const result = await fetch(url, {
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json',
     },
-    method: 'POST',
+    method: methodType,
     body: JSON.stringify(info),
   })
     .then((response) => response.json())

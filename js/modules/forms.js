@@ -1,6 +1,9 @@
-import{
+import {
   getBackendBody,
-}from './services.js';
+} from './services.js';
+import {
+  backendLink,
+} from './util.js';
 
 function validationEmail(email, msjForm, msjEmail) {
   email.addEventListener('input', () => {
@@ -61,7 +64,7 @@ function getIvalid(required) {
 }
 
 function validFieldLogin(form, required, msjForm) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const fields = getIvalid(required);
@@ -72,7 +75,20 @@ function validFieldLogin(form, required, msjForm) {
       msjForm.innerText = 'Try again: verify the red fields';
       msjForm.style.color = 'red';
     } else {
-      console.log('hola');
+      const emailInfo = form.elements[0].value;
+      const passwordInfo = form.elements[1].value;
+      const infoBody = {
+        email: emailInfo,
+        password: passwordInfo,
+      };
+      const data = await getBackendBody(infoBody, 'POST', `${backendLink}/user/login`);
+      if (data.data) {
+        window.location.replace(`home-logged-in.html?userId=${data.data.id}`);
+      } else {
+        msjForm.style.display = 'block';
+        msjForm.innerText = 'Try again: this user doesn´t exist';
+        msjForm.style.color = 'red';
+      }
     }
   });
 }
@@ -93,13 +109,12 @@ function validFieldSigin(form, required, msjForm) {
       const emailInfo = form.elements[1].value;
       const passwordInfo = form.elements[3].value;
       const infoBody = {
-        "name": nameInfo,
-        "email": emailInfo,
-        "password": passwordInfo,
+        name: nameInfo,
+        email: emailInfo,
+        password: passwordInfo,
       };
-      console.log( JSON.stringify(infoBody));
-      const data = await getBackendBody(infoBody);
-      console.log(data);
+      const data = await getBackendBody(infoBody, 'POST', `${backendLink}/user`);
+      window.location.replace(`home-logged-in.html?userId=${data.newUser._id}`);
     }
   });
 }

@@ -2,14 +2,25 @@ import {
   params,
   artistSongLink,
   playerSelect,
+  anchorHome,
+  anchorProfile,
+  anchorPlayer,
+  anchorArtist,
+  backendLink,
 } from './modules/util.js';
 import {
   selectModal,
-} from './modules/events.js';
+} from './modules/modal.js';
 import Playersubject from './modules/player-observer.js';
 import Canvas from './modules/canvas.js';
 // general function, get api and data
-import { getApi } from './modules/services.js';
+import {
+  getApi,
+  getBackendBody,
+} from './modules/services.js';
+
+// url params
+const userId = params.get('userId');
 
 // player
 const prevBtn = document.querySelector('.btn__prev-js');
@@ -18,8 +29,10 @@ const stopBtn = document.querySelector('.btn__stop-js');
 const nextBtn = document.querySelector('.btn__next-js');
 const favoritesBtn = document.querySelector('.btn__favorites-js');
 
-// temporal
+// dom elements
 const audio = document.querySelector('#audio');
+const musicTitle = document.querySelector('.container-player__title-js');
+
 
 // subscribe observer
 const selectSubj = new Playersubject(playerSelect, 'change');
@@ -27,7 +40,7 @@ const prevSubj = new Playersubject(prevBtn, 'click');
 const playSubj = new Playersubject(playBtn, 'click');
 const stopSubj = new Playersubject(stopBtn, 'click');
 const nextSubj = new Playersubject(nextBtn, 'click');
-const favoritesSubj = new Playersubject(favoritesBtn);
+const favoritesSubj = new Playersubject(favoritesBtn, 'click');
 
 // canvas
 const drawCanvas = new Canvas();
@@ -76,7 +89,8 @@ function audioVisual() {
 function songPlay( i, array, subs=true) {
   let index = i;
   audio.src = array[index].audio;
-  console.log(index);
+  musicTitle.innerHTML = array[index].name;
+  musicTitle.dataset.id = array[index].id;
   function nextsong() {
     index++;
     if (index > array.length - 1) {
@@ -100,10 +114,27 @@ function songPlay( i, array, subs=true) {
   }
 }
 
+async function addRecents(){
+  const musicId = musicTitle.dataset.id;
+  const infoBody = {
+    userId: userId,
+    listSongs: [musicId],
+  };
+  const hi = await getBackendBody(infoBody, 'PUT', `${backendLink}/rectmusic`);
+}
+async function addFavorites(){
+  const musicId = musicTitle.dataset.id;
+  const infoBody = {
+    userId: userId,
+    listSongs: [musicId],
+  };
+  const hi = await getBackendBody(infoBody, 'PUT', `${backendLink}/favmusic`);
+  console.log(hi);
+}
+
 if (playListParam === 'artist') {
   const songsLink = `${artistSongLink}/${artistPlaylistParam}`;
   const viewSongs = await getApi(songsLink);
-  console.log(viewSongs);
   for (let i = 0; i < viewSongs.length; i++) {
     if (viewSongs[i].id === songParam) {
       songPlay(i, viewSongs);
@@ -111,6 +142,16 @@ if (playListParam === 'artist') {
     }
   }
 }
+
 playSubj.subscribe(audioVisual);
+playSubj.subscribe(addRecents);
+nextSubj.subscribe(addRecents);
+prevSubj.subscribe(addRecents);
 stopSubj.subscribe(audioPause);
 selectSubj.subscribe(selectModal);
+favoritesSubj.subscribe(addFavorites);
+
+anchorHome.setAttribute('href', `home-logged-in.html?userId=${userId}`);
+anchorProfile.setAttribute('href', `profile-user.html?userId=${userId}`);
+anchorPlayer.setAttribute('href', `player.html?userId=${userId}`);
+anchorArtist.setAttribute('href', `view-artist.html?userId=${userId}`);

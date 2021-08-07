@@ -55,11 +55,11 @@
         <form action="#" method="GET" id="form-login">
           <label for="email-1">Email</label>
           <input class="principal__input required-login-js" type="email" name="email" id="email-1" class="form__input"
-            placeholder="example@gmail.com" />
+            placeholder="example@gmail.com" autocomplete = "email"/>
           <p class="form-account--warning" id="validateEmailLogin"></p>
           <label for="pwd">Password</label>
           <input class="content__input--space principal__input required-login-js" type="password" name="password" id="pwd"
-            class="form__input" placeholder="********" autocomplete="off"/>
+            class="form__input" placeholder="********" autocomplete = "current-password"/>
           <button class="content-1__btn primary-btn" type="submit">Sign in</button>
           <p class="form-account--warning" id="error-login-message"></p>
         </form>
@@ -70,18 +70,18 @@
         <form action="#" method="GET" id="form-sig-in">
           <label for="name">Name</label>
           <input class="principal__input required-sigin-js" type="text" name="user name" id="name" class="form__input"
-            placeholder="Juanito" />
+            placeholder="Juanito" autocomplete="name"/>
           <span id="validateName"></span>
           <label for="email">Email</label>
           <input class="principal__input required-sigin-js" type="email" name="email" id="email" class="form__input"
-            placeholder="example@gmail.com" />
+            placeholder="example@gmail.com" autocomplete = "email"/>
           <p class="form-account--warning" id="validateEmailSigin"></p>
           <label for="pwd">Password</label>
           <input class="principal__input required-sigin-js" type="password" name="password" id="pwd-1" class="form__input"
-            placeholder="********" autocomplete="off"/>
+            placeholder="********" autocomplete = "new-password"/>
           <label for="confirm-pwd">Confirm password</label>
-          <input class="principal__input required-sigin-js" class="content__input--space" type="password" name="confirm-password"
-            id="confirm-pwd" class="form__input" placeholder="********" autocomplete="off"/>
+          <input class="principal__input required-sigin-js" class="content__input--space" type="password" name="confirm-password"  autocomplete = "new-password"
+            id="confirm-pwd" class="form__input" placeholder="********"/>
           <p class="form-account--warning" id="error-message"></p>
           <button class="content-1__btn primary-btn" id="crete-account" type="submit">Create</button>
           <p class="form-account--warning" id="error-sigin-message"></p>
