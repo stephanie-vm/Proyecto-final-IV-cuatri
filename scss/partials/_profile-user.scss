@@ -1,33 +1,155 @@
-.tab-content-playlist {
-  background-color: #C7CEEA;
-  border-radius: 5px;
-  box-shadow: $box-shadow;
-  color: #525151;
-  float: right;
-  height: 361px;
-  margin-right: 28px;
-  margin-top: 36px;
-  padding: 20px;
-  width: 765px;
-}
-.secondary-input {
-  background-color: transparent;
-  border:none;
-  border-bottom: 3px solid $dark-blue;
-  display: block;
-  font-family: $secondary-font;
-  height: 40px;
-  margin-bottom: 18px;
-  margin-left: 26px;
-  margin-top: -26px;
-}
+// styles of scrolls buttons
+.tabs-profile ul::-webkit-scrollbar-button:increment
+
+.tab-content-profile::-webkit-scrollbar-button:increment
+
 .content-tabs input:focus {
   background-color: $backround;
 }
+
+.tabs-profile ul::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+.tab-content-profile::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+// tabs' scroll li  with names' playlists
+.tabs-profile ul::-webkit-scrollbar {
+  -webkit-appearance: none;
+  direction: ltr
+}
+
+.tabs-profile ul::-webkit-scrollbar-button {
+  display: none;
+}
+
+.tabs-profile ul::-webkit-scrollbar-thumb {
+  background-color: $dark-blue;
+  border-radius: 20px;
+  border: 2px solid $dark-pink;
+}
+
+.tabs-profile ul::-webkit-scrollbar-track {
+  background-color: $dark-pink;
+  border-radius: 10px;
+}
+// tabs' scroll content info with songs
+.tab-content-profile::-webkit-scrollbar {
+  -webkit-appearance: none;
+  direction: ltr
+}
+
+.tab-content-profile::-webkit-scrollbar-button {
+  display: none;
+}
+
+.tab-content-profile::-webkit-scrollbar-thumb {
+  background-color: $dark-blue;
+  border-radius: 20px;
+  border: 2px solid $dark-pink;
+}
+
+.tab-content-profile::-webkit-scrollbar-track {
+  background-color: $dark-pink;
+  border-radius: 10px;
+}
+// decorative image girl
 .content-tabs__img {
   float: right;
   height: 196px;
-  margin-right: 26px;
-  margin-top: -591px;
+  margin-top: -186px;
+  position: absolute;
+  right: 20px;
   width: 482px;
+  z-index: 2;
+}
+
+// paragraph:nickname
+.content-tabs__p {
+  margin-left: 68px;
+  margin-top: -39px;
+}
+
+// father's div all content
+.content-tabs-profile{
+  background-color: #FE9D99;
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  height: 660px;
+  margin-bottom: 70px;
+  padding-top: 40px;
+  position: relative;
+  width: 1080px;
+}
+
+// button edit name user
+.edit-icon {
+  background-color: transparent;
+  border: none;
+  display: block;
+  margin-left: 170px;
+  margin-top: -52px;
+  padding: 0px;
+}
+
+// div that content all song's lists
+.tab-content-profile {
+  background-color: $light-blue;
+  border-radius: $boder-radius;
+  box-shadow: $box-shadow;
+  color: $paragraph-color;
+  float: right;
+  height: 340px;
+  margin-right: 28px;
+  overflow-y: scroll;
+  padding: 20px;
+  width: 682px;
+}
+
+// styles li with playlist's names
+.tabs-list-item-profile {
+  color: $titles-color;
+  float: left;
+  font-family: $title-font;
+  font-size: 23px;
+  height: 46px;
+  margin-bottom: 36px;
+  margin-left: 22px;
+  padding-top: 15px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 260px;
+}
+
+// styles ul with playlist's names
+.tabs-list-profile {
+  direction: rtl;
+  display: block;
+  font-size: 23px;
+  height: 353px;
+  list-style: none;
+  margin: 0;
+  overflow-y: scroll;
+  width: 290px;
+}
+
+// div that content li with playlits's names
+.tabs-profile {
+  display: inline-block;
+  left: 40px;
+  position: absolute;
+  top: 276px;
+  width: 430px;
+  z-index: 2;
+}
+
+// title call me:example
+.title-tabs-profile {
+  color: #383333;
+  display: inline-block;
+  font-family: "Abril Fatface", cursive;
+  font-size: 26px;
+  padding: 100px 0 50px 70px;
 }
