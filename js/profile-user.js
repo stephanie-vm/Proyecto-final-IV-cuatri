@@ -1,13 +1,24 @@
 // general function, get api and data
-import { getApi } from './modules/services.js';
+import { getBackend } from './modules/services.js';
 // util varaibles of differents links for doing request api
 import {
-  artistLink,
-  artistSongLink,
-  artistIdParam,
+  anchorHome,
+  anchorProfile,
+  anchorPlayer,
+  anchorArtist,
+  params,
+  backendLink,
 } from './modules/util.js';
 // get data of api
-const dataArtist = await getApi(artistLink);
+const userId = params.get('userId');
+const dataUser = await getBackend('GET', `${backendLink}/user/${userId}`);
+const dataRecents = await getBackend('GET', `${backendLink}/rectmusic/${userId}`);
+const dataFavorites = await getBackend('GET', `${backendLink}/favmusic/${userId}`);
+const dataPlaylists = await getBackend('GET', `${backendLink}/playlists/${userId}`);
+console.log(dataUser);
+console.log(dataRecents);
+console.log(dataFavorites);
+console.log(dataPlaylists);
 
 function itemsProfile() {
   for (let i = 0; i < dataArtist.length; i++) {
@@ -88,3 +99,7 @@ function changeStatus() {
 }
 changeStatus();
 
+anchorHome.setAttribute('href', `home-logged-in.html?userId=${userId}`);
+anchorProfile.setAttribute('href', `profile-user.html?userId=${userId}`);
+anchorPlayer.setAttribute('href', `player.html?userId=${userId}`);
+anchorArtist.setAttribute('href', `view-artist.html?userId=${userId}`);
