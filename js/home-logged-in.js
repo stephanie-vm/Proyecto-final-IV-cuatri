@@ -54,7 +54,6 @@ async function getUserInfo(){
   setUserName.innerHTML=`Welcome, ${dataUser.data.name}`;
   const fisrtSong = dataRecent.data[0].listSongs[0];
   const songData = await getApi(`${songLink}${fisrtSong}`);
-  console.log(songData.image)
   const anchorArtist = document.createElement('img');
   anchorArtist.style.borderRadius = '200px';
   anchorArtist.style.width = '160px';

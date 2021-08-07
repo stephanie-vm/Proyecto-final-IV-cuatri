@@ -38,12 +38,14 @@ function selectModal() {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (formImput.value !== '') {
+      const optionAdd = document.querySelector('.option-add-js');
       backgroundModal.style.display = 'none';
       const userPlaylist = await createPlaylist(formImput.value, userId);
       const option = document.createElement('option');
       option.innerHTML = userPlaylist.data.name;
       option.dataset.id = userPlaylist.data._id;
       optionCreate.after(option);
+      optionAdd.selected = true;
     }
   });
 }

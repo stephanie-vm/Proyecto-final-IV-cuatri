@@ -82,7 +82,7 @@ function validFieldLogin(form, required, msjForm) {
         password: passwordInfo,
       };
       const data = await getBackendBody(infoBody, 'POST', `${backendLink}/user/login`);
-      if (data.data) {
+      if (data.data.existe === true) {
         window.location.replace(`home-logged-in.html?userId=${data.data.id}`);
       } else {
         msjForm.style.display = 'block';

@@ -22,5 +22,3 @@ validationEmail(emailSignIn, msjSigin, msjEmailSigin);
 validationPassword(formSignIn, msjSigin, verifyPassword);
 validFieldLogin(formLogin, requiredLogin, msjLogin);
 validationEmail(emailLogin, msjLogin, msjEmailLogin);
-
-

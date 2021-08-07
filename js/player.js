@@ -157,6 +157,24 @@ async function getPlaylist(){
   }
 }
 
+
+function addPlaylist(){
+  const musicId = musicTitle.dataset.id;
+  if (playerSelect.value !== 'Create new playlist' || playerSelect.value !== 'Add to playlist') {
+    const optionSelected = document.querySelector('option:checked');
+    const optionAdd = document.querySelector('.option-add-js');
+    console.log(optionSelected)
+    const infoBody = {
+      listSongs: [musicId],
+    };
+    getBackendBody(infoBody, 'PUT', `${backendLink}/playlist/${optionSelected.dataset.id}`);
+    setTimeout(() => {
+      optionAdd.selected = true;
+    }, 4000);
+
+  }
+}
+
 getPlaylist();
 
 playSubj.subscribe(audioVisual);
@@ -165,6 +183,7 @@ nextSubj.subscribe(addRecents);
 prevSubj.subscribe(addRecents);
 stopSubj.subscribe(audioPause);
 selectSubj.subscribe(selectModal);
+selectSubj.subscribe(addPlaylist);
 favoritesSubj.subscribe(addFavorites);
 
 anchorHome.setAttribute('href', `home-logged-in.html?userId=${userId}`);
