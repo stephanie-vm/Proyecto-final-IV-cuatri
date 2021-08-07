@@ -7,6 +7,7 @@ import {
   anchorPlayer,
   anchorArtist,
   backendLink,
+  optionCreate,
 } from './modules/util.js';
 import {
   selectModal,
@@ -17,6 +18,7 @@ import Canvas from './modules/canvas.js';
 import {
   getApi,
   getBackendBody,
+  getBackend,
 } from './modules/services.js';
 
 // url params
@@ -142,6 +144,20 @@ if (playListParam === 'artist') {
     }
   }
 }
+
+async function getPlaylist(){
+  const userPlaylist = await getBackend('GET', `${backendLink}/playlists/${userId}`);
+  if (userPlaylist.data.length > 0) {
+    userPlaylist.data.forEach((element) => {
+      const option = document.createElement('option');
+      option.innerHTML = element.name;
+      option.dataset.id = element._id;
+      optionCreate.after(option);
+    });
+  }
+}
+
+getPlaylist();
 
 playSubj.subscribe(audioVisual);
 playSubj.subscribe(addRecents);

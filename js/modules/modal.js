@@ -1,6 +1,7 @@
 import {
   playerSelect,
   params,
+  optionCreate,
 } from './util.js';
 
 import {
@@ -30,15 +31,19 @@ function selectModal() {
   const userId = params.get('userId');
   if (playerSelect.value === 'Create new playlist') {
     backgroundModal.style.display = 'block';
-  };
-  closeModal.addEventListener('click', () => {
+  }
+  closeModal.addEventListener('click', async () => {
     backgroundModal.style.display = 'none';
   });
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (formImput.value !== '') {
-      createPlaylist(formImput.value, userId);
       backgroundModal.style.display = 'none';
+      const userPlaylist = await createPlaylist(formImput.value, userId);
+      const option = document.createElement('option');
+      option.innerHTML = userPlaylist.data.name;
+      option.dataset.id = userPlaylist.data._id;
+      optionCreate.after(option);
     }
   });
 }

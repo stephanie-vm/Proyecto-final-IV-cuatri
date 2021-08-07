@@ -14,6 +14,7 @@ const params = new URLSearchParams(urlArtist.search);
 
 // select playlist
 const playerSelect = document.querySelector('.player__select-js');
+const optionCreate = document.querySelector('.option-create-js');
 
 // backend url
 const backendLink = 'https://paul-proyect1887.herokuapp.com';
@@ -38,4 +39,5 @@ export {
   anchorPlayer,
   anchorArtist,
   songLink,
+  optionCreate,
 };

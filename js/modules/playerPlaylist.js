@@ -1,19 +1,20 @@
 import {
   getBackendBody,
+  getBackend,
 } from './services.js';
 import {
   backendLink,
 } from './util.js';
 
-async function getPlaylist(value, id) {
+async function createPlaylist(value, id) {
   const infoBody = {
     userId: id,
     listSongs: [],
     name: value,
   };
-  console.log(infoBody)
-  const fav = await getBackendBody(infoBody, 'POST', `${backendLink}/playList`);
-  console.log(fav);
+  const insertPlayList = await getBackendBody(infoBody, 'POST', `${backendLink}/playList`);
+  console.log(insertPlayList);
+  return insertPlayList;
 }
 
 export{
