@@ -42,8 +42,7 @@ function tabsPlaylist() {
     const trashImg = document.createElement('img');
     trashButton.dataset.id = `${dataPlaylists.data[i]._id}`;
     trashImg.setAttribute('src', './img/trash.png');
-    trashButton.setAttribute('class', 'trash');
-    trashButton.setAttribute('class', 'buttonSvg');
+    trashButton.setAttribute('class', 'trash buttonSvg');
     trashButton.appendChild(trashImg);
     liProfileView.appendChild(trashButton);
     const anchorProfile = document.createElement('a');
@@ -77,10 +76,8 @@ function tabsPlaylist() {
       const spanImgArtsit = document.createElement('span');
       const imgArtistSong = document.createElement('img');
       const trashButtonLi = document.createElement('button');
-      trashButtonLi.setAttribute('class', 'buttonSvg');
       const trashImgLi = document.createElement('img');
-      trashButtonLi.setAttribute('class', 'trashSong');
-      trashButtonLi.setAttribute('class', 'buttonSvg');
+      trashButtonLi.setAttribute('class', 'trashSong buttonSvg');
       trashButtonLi.dataset.id = `${dataPlaylists.data[i]._id}`;
       trashButtonLi.dataset.song = `${songs.id}`;
       trashImgLi.setAttribute('src', './img/trash.png');
@@ -174,8 +171,7 @@ async function tabsFavoritesRecents(recents = false) {
       trashButtonLi.dataset.id = `${dataPlaylists.data._id}`;
       trashButtonLi.dataset.song = `${songs.id}`;
       trashImgLi.setAttribute('src', './img/trash.png');
-      trashButtonLi.setAttribute('class', 'trashFavorites');
-      trashButtonLi.setAttribute('class', 'buttonSvg');
+      trashButtonLi.setAttribute('class', 'trashFavorites buttonSvg');
       trashButtonLi.appendChild(trashImgLi);
       listItems.appendChild(trashButtonLi);
     }
