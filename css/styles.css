@@ -917,6 +917,15 @@ li {
 .tab-content-profile img {
   display: inline; }
 
+.tab-content-profile svg {
+  margin: 0; }
+
+.tab-content-profile li {
+  border-bottom: 4px solid #1C264A;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding-top: 10px; }
+
 .buttonSvg {
   background-color: transparent;
   border: none;
