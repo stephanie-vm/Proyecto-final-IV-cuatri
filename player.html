@@ -36,17 +36,17 @@
   <div class="wrapper">
     <!-- HEADER -->
     <div class="header">
-      <a href="index.html"><img class="logo" src="img/just-symphony.png" alt="just-symphony"></a>
+      <a  class="anchor-home-js" href="index.html"><img class="logo" src="img/just-symphony.png" alt="just-symphony"></a>
       <div class="header__nav clearfix">
         <ul class="header__ul clearfix">
-          <li class="header__li"><a href="profile-user.html">Profile</a></li>
-          <li class="header__li"><a href="player.html">Music player</a></li>
-          <li class="header__li"><a href="view-artist.html">Artists</a></li>
+          <li class="header__li"><a class="anchor-profile-js" href="profile-user.html">Profile</a></li>
+          <li class="header__li"><a class="anchor-player-js" href="player.html">Music player</a></li>
+          <li class="header__li"><a class="anchor-artist-js" href="view-artist.html">Artists</a></li>
         </ul>
       </div>
     </div>
     <div class="container-player">
-      <h2 class="container-player__title">
+      <h2 class="container-player__title container-player__title-js">
         Your are listening
         <!--set this content with js-->
       </h2>
@@ -60,8 +60,8 @@
         <div class="container-player__select">
           <label for="existing-list" class="player-select__label" hidden>Select playlist:</label>
           <select id="existing-list" class="principal__input player-select player__select-js">
-            <option value="" aria-hidden="true" hidden>Add to playlist</option>
-            <option value="Create new playlist">Create new playlist</option>
+            <option class="option-add-js" value="" aria-hidden="true" hidden>Add to playlist</option>
+            <option class="option-create option-create-js" value="Create new playlist">Create new playlist</option>
           </select>
         </div>
         <div class="container-player__controls">
@@ -209,10 +209,10 @@
           </filter>
         </defs>
       </svg>
-      <h2 class="title-modal">Add to a list</h2>
+      <h2 class="title-modal">Add new playlist</h2>
       <form class="modal__form" action="#" method="GET">
-        <label for="new-song">New-song</label>
-        <input class="principal__input" type="text" name="add-new-song" id="new-song">
+        <label for="new-song" hidden>New-song</label>
+        <input class="principal__input modal__input" type="text" name="add-new-song" id="new-song" value="">
         <button class="primary-btn btn-save">Save</button>
       </form>
     </div>

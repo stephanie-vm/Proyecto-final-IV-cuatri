@@ -48,6 +48,8 @@
   display: block;
 }
 #error-message {
-  display: none;
   color: $red;
+}
+.form-account--warning{
+  display: none;
 }

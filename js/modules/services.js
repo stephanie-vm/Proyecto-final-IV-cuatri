@@ -7,6 +7,34 @@ async function getApi(link) {
   return result;
 }
 
+async function getBackend(methodType, url) {
+  const result = await fetch(url, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    method: methodType,
+  })
+    .then((response) => response.json())
+    .then((data) => data);
+  return result;
+}
+// await getBackend(songsLink, 'DELETE');
+
+async function getBackendBody(info, methodType, url) {
+  const result = await fetch(url, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    method: methodType,
+    body: JSON.stringify(info),
+  })
+    .then((response) => response.json())
+    .then((data) => data);
+  return result;
+}
+
 export {
   getApi,
+  getBackend,
+  getBackendBody,
 };

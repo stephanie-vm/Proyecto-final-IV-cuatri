@@ -4,10 +4,19 @@ import { getApi } from './modules/services.js';
 import {
   artistLink,
   artistSongLink,
-  artistIdParam,
+  params,
+  anchorHome,
+  anchorProfile,
+  anchorPlayer,
+  anchorArtist,
 } from './modules/util.js';
+
 // get data of api
 const dataArtist = await getApi(artistLink);
+
+// url params
+const artistIdParam = params.get('artistId');
+const userId = params.get('userId');
 
 // function for create and render html  about name's artists
 function nameArtistsTabs() {
@@ -25,6 +34,7 @@ function nameArtistsTabs() {
   }
 }
 nameArtistsTabs();
+
 //Function for create and render html about artist's image, description, songs and albums.
 function tabsContentArtist() {
   for (let i = 0; i < dataArtist.length; i++) {
@@ -47,6 +57,7 @@ function tabsContentArtist() {
     tabsContentsongs(dataArtist[i].id, infoContentTabs)
   }
 }
+
 tabsContentArtist();
 async function tabsContentsongs(dataArtist, contentInfoTabs) {
   const songsLink = artistSongLink + '/' + dataArtist;
@@ -71,10 +82,8 @@ async function tabsContentsongs(dataArtist, contentInfoTabs) {
     const albumSong = document.createElement('p');
     albumSong.setAttribute('class', 'tabs-content-album-song');
     const anchordImgArtsit = document.createElement('a');
-    anchordImgArtsit.setAttribute('href', `player.html?playList=artist&&song=${viewSongs[i].id}&&artistPlaylist=${dataArtist}`)
-    anchordImgArtsit.setAttribute('dataId', `${viewSongs[i].name}`);
-    anchordImgArtsit.setAttribute('aria-labelledby', 'anchor-label');
-    anchordImgArtsit.setAttribute('id', 'anchord-svg');
+    anchordImgArtsit.setAttribute('href', `player.html?playList=artist&&song=${viewSongs[i].id}&&artistPlaylist=${dataArtist}&&userId=${userId}`);
+    anchordImgArtsit.setAttribute('aria-labelledby', `anchor-label${i}`);
     const svgIcon = `
     <svg class="player-btn__icon player-icon" aria-hidden="true" focusable="false" width="60" height="66" viewBox="0 0 60 66"    fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_d)">
@@ -95,11 +104,11 @@ async function tabsContentsongs(dataArtist, contentInfoTabs) {
         </filter>
       </defs>
     </svg>
-    `
+    `;
     const spanImgArtsit = document.createElement('span');
     spanImgArtsit.innerText = 'play';
     spanImgArtsit.hidden = true;
-    spanImgArtsit.setAttribute('id', 'anchor-label');
+    spanImgArtsit.setAttribute('id', `anchor-label${i}`);
     anchordImgArtsit.innerHTML = svgIcon;
     anchordImgArtsit.appendChild(spanImgArtsit);
     liSongsTabs.appendChild(anchordImgArtsit);
@@ -108,7 +117,6 @@ async function tabsContentsongs(dataArtist, contentInfoTabs) {
     listSongs.appendChild(liSongsTabs);
   }
 }
-
 
 //Function for check id and put the class active in the moment
 function checkId(items, content) {
@@ -127,6 +135,7 @@ function checkId(items, content) {
     items[0].classList.add('js-active');
   }
 }
+
 //Function for controller event click and remove or add the correct class
 function tabsEvent(items, content) {
   for (let i = 0; i < items.length; i++) {
@@ -148,6 +157,7 @@ function tabsEvent(items, content) {
     });
   }
 }
+
 // Function for change the style, in the moment that just will be active
 function changeStatus() {
   const items = document.querySelectorAll('.tabs-list-item');
@@ -156,3 +166,8 @@ function changeStatus() {
   checkId(items, content);
 }
 changeStatus();
+
+anchorHome.setAttribute('href', `home-logged-in.html?userId=${userId}`);
+anchorProfile.setAttribute('href', `profile-user.html?userId=${userId}`);
+anchorPlayer.setAttribute('href', `player.html?userId=${userId}`);
+anchorArtist.setAttribute('href', `view-artist.html?userId=${userId}`);
