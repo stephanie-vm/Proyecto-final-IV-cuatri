@@ -515,10 +515,7 @@ select {
   text-shadow: 0 20px 20px rgba(252, 169, 196, 0.6); }
 
 .anchor-recent {
-  margin-left: 106px;
-  z-index: 2;
-  position: absolute;
-  top: 480px; }
+  margin-left: 106px; }
 
 .home-content {
   width: 1080px;
@@ -907,6 +904,25 @@ canvas {
   display: inline;
   margin-left: 14px; }
 
+li {
+  list-style: none; }
+
+.tab-content-profile p {
+  display: inline; }
+
+.tab-content-profile a {
+  display: inline-block;
+  width: 10px; }
+
+.tab-content-profile img {
+  display: inline; }
+
+.buttonSvg {
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+  display: block; }
+
 .tab-content-profile {
   background-color: #C7CEEA;
   border-radius: 5px;
@@ -951,7 +967,7 @@ canvas {
   left: 40px;
   position: absolute;
   top: 276px;
-  width: 430px;
+  width: 300px;
   z-index: 2; }
 
 .title-tabs-profile {

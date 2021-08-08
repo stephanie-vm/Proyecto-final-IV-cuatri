@@ -16,6 +16,8 @@ import {
 import {
   modalPlaylistChanges,
   modalPlaylistSongs,
+  modalFavoritesSongs,
+  editNameModal,
 } from './modules/modal.js';
 
 const userId = params.get('userId');
@@ -36,19 +38,13 @@ function tabsPlaylist() {
     const favoritesongs = document.querySelector('.tabs-list-profile-favorites');
     const listProfileView = document.querySelector('.tabs-list-profile');
     const liProfileView = document.createElement('li');
-    const editButton = document.createElement('button');
     const trashButton = document.createElement('button');
-    const editImg = document.createElement('img');
     const trashImg = document.createElement('img');
-    editButton.dataset.id = `${dataPlaylists.data[i]._id}`;
     trashButton.dataset.id = `${dataPlaylists.data[i]._id}`;
-    editImg.setAttribute('src', './img/pencil.png');
     trashImg.setAttribute('src', './img/trash.png');
-    editButton.setAttribute('class', 'pencil');
     trashButton.setAttribute('class', 'trash');
-    editButton.appendChild(editImg);
+    trashButton.setAttribute('class', 'buttonSvg');
     trashButton.appendChild(trashImg);
-    liProfileView.appendChild(editButton);
     liProfileView.appendChild(trashButton);
     const anchorProfile = document.createElement('a');
     anchorProfile.setAttribute('href', `#tab-${i}`);
@@ -81,8 +77,10 @@ function tabsPlaylist() {
       const spanImgArtsit = document.createElement('span');
       const imgArtistSong = document.createElement('img');
       const trashButtonLi = document.createElement('button');
+      trashButtonLi.setAttribute('class', 'buttonSvg');
       const trashImgLi = document.createElement('img');
       trashButtonLi.setAttribute('class', 'trashSong');
+      trashButtonLi.setAttribute('class', 'buttonSvg');
       trashButtonLi.dataset.id = `${dataPlaylists.data[i]._id}`;
       trashButtonLi.dataset.song = `${songs.id}`;
       trashImgLi.setAttribute('src', './img/trash.png');
@@ -167,17 +165,17 @@ async function tabsFavoritesRecents(recents = false) {
     itemTextAlbum.innerText = `${songs.album}`;
     anchordImgArtsit.appendChild(spanImgArtsit);
     listItems.appendChild(imgArtistSong);
-    listItems.appendChild(anchordImgArtsit);
-    listItems.appendChild(anchordImgArtsit);
     listItems.appendChild(itemTextAlbum);
     listItems.appendChild(itemTextName);
+    listItems.appendChild(anchordImgArtsit);
     if (recents === false) {
       const trashButtonLi = document.createElement('button');
       const trashImgLi = document.createElement('img');
-      trashButtonLi.dataset.id = `${dataPlaylists.data[i]._id}`;
+      trashButtonLi.dataset.id = `${dataPlaylists.data._id}`;
       trashButtonLi.dataset.song = `${songs.id}`;
       trashImgLi.setAttribute('src', './img/trash.png');
-      trashImgLi.setAttribute('class', 'trashFavorites');
+      trashButtonLi.setAttribute('class', 'trashFavorites');
+      trashButtonLi.setAttribute('class', 'buttonSvg');
       trashButtonLi.appendChild(trashImgLi);
       listItems.appendChild(trashButtonLi);
     }
@@ -227,6 +225,8 @@ tabsPlaylist();
 changeStatus();
 modalPlaylistChanges();
 checkPlaylist();
+checkFavorites();
+editNameModal();
 
 function checkPlaylist() {
   const openTrash = document.querySelectorAll('.trashSong');
@@ -240,13 +240,13 @@ function checkPlaylist() {
 }
 
 function checkFavorites() {
-  const openTrash = document.querySelectorAll('.trashSong');
+  const openTrash = document.querySelectorAll('.trashFavorites');
   if (openTrash.length > 0) {
-    modalPlaylistSongs(openTrash);
+    modalFavoritesSongs(openTrash);
     return;
   }
   window.setTimeout(function() {
-    checkPlaylist();
+    checkFavorites();
   }, 3000);
 }
 

@@ -11,12 +11,69 @@ import {
 
 import {
   getBackend,
+  getBackendBody,
 } from './services.js';
+
+// url params
+const userId = params.get('userId');
 
 // modal function:
 
+function editNameModal() {
+  // add favorite's modal variables :
+  const openTrash = document.querySelector('.edit-icon');
+  const closeModal = document.querySelector('.btn-modal--close');
+  const overlay = document.querySelector('.modal__overlay');
+  const form = document.querySelector('.modal__form');
+  const formImput = document.querySelector('.modal__input');
+  openTrash.addEventListener('click', (e) => {
+    overlay.style.display = 'block';
+  });
+  closeModal.addEventListener('click', () => {
+    overlay.style.display = 'none';
+  });
+  form.addEventListener('submit', async(e) => {
+    e.preventDefault();
+    if (formImput.value !== '') {
+      const infoBody = {
+        name: formImput.value,
+      };
+      await getBackendBody(infoBody, 'PUT', `${backendLink}/user/${userId}`);
+      location.reload();
+    }
+    overlay.style.display = 'none';
+  });
+}
+
+async function modalFavoritesSongs(openTrash) {
+  console.log(openTrash);
+  const backgroundModal = document.querySelector('.modal__overlay-changes');
+  const close = document.querySelector('.btn-modal-changes--close');
+  const cancel = document.querySelector('.cancel-btn');
+  const ok = document.querySelector('.btn-save-changes');
+  for (let i = 0; i < openTrash.length; i++) {
+    openTrash[i].addEventListener('click', (e) => {
+      backgroundModal.style.display = 'block';
+      const playSong = e.currentTarget.dataset.song;
+      console.log(e.currentTarget);
+
+      ok.addEventListener('click', async () => {
+        await getBackend('DELETE', `${backendLink}/favmusic/${userId}/song/${playSong}`);
+        backgroundModal.style.display = 'none';
+        location.reload();
+      });
+    });
+  }
+  close.addEventListener('click', () => {
+    backgroundModal.style.display = 'none';
+  });
+  cancel.addEventListener('click', () => {
+    backgroundModal.style.display = 'none';
+  });
+}
+
 async function modalPlaylistSongs(openTrash) {
-  console.log(openTrash)
+  console.log(openTrash);
   const backgroundModal = document.querySelector('.modal__overlay-changes');
   const close = document.querySelector('.btn-modal-changes--close');
   const cancel = document.querySelector('.cancel-btn');
@@ -73,8 +130,6 @@ function selectModal() {
   const form = document.querySelector('.modal__form');
   const formImput = document.querySelector('.modal__input');
   const backgroundModal = overlay;
-  // url params
-  const userId = params.get('userId');
   if (playerSelect.value === 'Create new playlist') {
     backgroundModal.style.display = 'block';
   }
@@ -100,4 +155,6 @@ export {
   modalPlaylistChanges,
   selectModal,
   modalPlaylistSongs,
+  modalFavoritesSongs,
+  editNameModal,
 };
