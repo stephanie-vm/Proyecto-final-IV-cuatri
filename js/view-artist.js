@@ -82,7 +82,7 @@ async function tabsContentsongs(dataArtist, contentInfoTabs) {
     const albumSong = document.createElement('p');
     albumSong.setAttribute('class', 'tabs-content-album-song');
     const anchordImgArtsit = document.createElement('a');
-    anchordImgArtsit.setAttribute('href', `player.html?playList=artist&&song=${viewSongs[i].id}&&artistPlaylist=${dataArtist}&&userId=${userId}`)
+    anchordImgArtsit.setAttribute('href', `player.html?playList=artist&&song=${viewSongs[i].id}&&artistPlaylist=${dataArtist}&&userId=${userId}`);
     anchordImgArtsit.setAttribute('dataId', `${viewSongs[i].name}`);
     anchordImgArtsit.setAttribute('aria-labelledby', 'anchor-label');
     anchordImgArtsit.setAttribute('id', 'anchord-svg');
