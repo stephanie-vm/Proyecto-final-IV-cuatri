@@ -98,28 +98,34 @@ li{
 }
 .tab-content-profile p{
   display: inline;
+  margin-left: 20px;
 }
 .tab-content-profile a{
   display: inline-block;
   width: 10px;
+  margin-right: 34px;
+  margin-left: 24px;
 }
 .tab-content-profile img{
   display: inline;
+  margin-left: 20px;
 }
 .tab-content-profile svg{
   margin: 0;
+}
+.buttonSvg img{
+  display: inline;
 }
 .tab-content-profile li{
   border-bottom: 4px solid #1C264A;
   border-radius: 5px;
   margin-bottom: 20px;
-  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .buttonSvg{
   background-color: transparent;
   border: none;
   padding: 0px;
-  display: block;
 }
 // div that content all song's lists
 .tab-content-profile {
