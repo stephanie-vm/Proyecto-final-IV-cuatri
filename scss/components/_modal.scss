@@ -16,12 +16,13 @@
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 5;
 }
 .modal{
     background-color: $light-pink;
     border-radius: $boder-radius;
-    height: 300px;
-    margin: 8% auto;
+    height: 202px;
+    margin: 15% auto;
     width: 500px;
     padding: 30px 20px;
     position: relative;

@@ -417,16 +417,17 @@ p {
   left: 0;
   position: absolute;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 4; }
 
 .modal-changes {
   background-color: #FE9D99;
   border-radius: 5px;
   height: 160px;
-  margin: 8% auto;
-  width: 500px;
+  margin: 15% auto;
   padding: 30px 20px;
-  position: relative; }
+  position: relative;
+  width: 452px; }
 
 .btn-modal-changes--close {
   position: absolute;
@@ -459,13 +460,14 @@ p {
   left: 0;
   position: fixed;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 5; }
 
 .modal {
   background-color: #FE9D99;
   border-radius: 5px;
-  height: 300px;
-  margin: 8% auto;
+  height: 202px;
+  margin: 15% auto;
   width: 500px;
   padding: 30px 20px;
   position: relative; }
@@ -899,10 +901,11 @@ canvas {
 .edit-icon {
   background-color: transparent;
   border: none;
-  display: block;
   margin-left: 170px;
   margin-top: -52px;
-  padding: 0px; }
+  padding: 0px;
+  display: inline;
+  margin-left: 14px; }
 
 .tab-content-profile {
   background-color: #C7CEEA;
@@ -915,6 +918,9 @@ canvas {
   overflow-y: scroll;
   padding: 20px;
   width: 682px; }
+
+.content-tabs__p {
+  display: inline; }
 
 .tabs-list-item-profile {
   color: #383333;
@@ -950,7 +956,9 @@ canvas {
 
 .title-tabs-profile {
   color: #383333;
-  display: inline-block;
   font-family: "Abril Fatface", cursive;
   font-size: 26px;
-  padding: 100px 0 50px 70px; }
+  padding: 100px 0 50px 70px;
+  display: block;
+  margin-bottom: 0;
+  padding-bottom: 20px; }
