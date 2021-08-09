@@ -21,7 +21,7 @@ const userId = params.get('userId');
 
 function editNameModal() {
   // add favorite's modal variables :
-  const openTrash = document.querySelector('.edit-icon');
+  const openTrash = document.querySelector('.edit-name');
   const closeModal = document.querySelector('.btn-modal--close');
   const overlay = document.querySelector('.modal__overlay');
   const form = document.querySelector('.modal__form');
